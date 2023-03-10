@@ -1,14 +1,20 @@
 import React from "react";
 import NavBar from "./NavBar";
-import { Text, Box, Button } from "@chakra-ui/react";
+import { Text, Box, Button, Image, Flex } from "@chakra-ui/react";
 import CV from "../Utils/CV.DEVELOPER.pdf";
 import Cards from "./Cards";
+import countries from "../img/countries.png";
+import { Icon, Link } from "@chakra-ui/react";
+import { FaGithub, FaGlobe } from "react-icons/fa";
 
 export default function Home() {
   return (
     <Box>
       <NavBar />
-      <Box
+      <br />
+      <br />
+
+      <Box id="inicio"
         display="flex"
         flexDirection="column"
         alignItems="center"
@@ -24,7 +30,7 @@ export default function Home() {
         </Text>
 <br />
 <br />
-
+<Box  maxWidth="1000px">
         <Text margin="left" fontSize="20px" fontWeight="bold" textAlign="justify">
           Actualemente me desempeño en el área del desarrollo Web, tanto
           Backend, como Frontend. Me apasiona el trabajo en equipo, donde todos
@@ -33,10 +39,11 @@ export default function Home() {
           divierte más que seguir aprendiendo tecnologías nuevas e
           implementarlas con el fin de alcanzar mis metas.
         </Text>
+        </Box>
       </Box>
       <a href={CV} target="_blank" rel="noopener noreferrer">
-        <Button mt={6} size="lg" marginLeft="100px" colorScheme="blue">
-          Ver mi CV
+        <Button mt={6} size="lg" marginLeft="100px" colorScheme="yellow">
+          <Text fontSize= "25px" fontFamily= "sans-serif" fontWeight= "bold">Ver mi CV </Text>
         </Button>
       </a>
       <br />
@@ -53,6 +60,7 @@ export default function Home() {
       >
         Sobre mi
       </Text>
+      <br />
       <Text marginLeft= "100" textAlign="justify" maxWidth="1000px"
       fontWeight="bold" fontSize= "18px">
       Les cuento un poco de mi!
@@ -90,11 +98,80 @@ Ser programador es prolongar la infancia! :)
       </Text>
       <br />
       <br />
-      
+
       <Cards />
+      <br />
+      <br />
+
       
 
       </Box>
+      <Box id="Proyectos">
+      <Text
+        fontSize="50px"
+        marginLeft="100px"
+        fontWeight="bold"
+        textDecoration="underline"
+        textDecorationColor="cyan.700"
+      >
+        Proyectos
+      </Text>
+      <Text fontSize= "22px" fontWeight="bold" color="yellow.300" marginLeft= "100px">
+        Mis proyectos más recientes
+      </Text>
+      <br />
+      <br />
+      <Text fontSize= "30px" fontWeight="bold"  marginLeft= "100px">
+       Aplicación de Países
+      </Text>
+      <br />
+      <Flex>
+      <Box
+          marginLeft="100px"
+          width="800px"
+          height="400px"
+          borderWidth="10px"
+          borderRadius="2g"
+          overflow="hidden"
+          boxShadow="lg"
+          transition="all 0.2s ease-in-out"
+          _hover={{
+            transform: "scale(1.05)",
+            boxShadow: "xl",
+          }}
+        >
+          <Image
+            src={countries}
+            alt="Card image"
+            width="100%"
+            height="100%"
+            objectFit="cover"
+          />
+        </Box>
+        <Box width= "30%">
+            <Text fontSize= "22px" fontWeight= "bold" fontFamily= "sans-serif" textAlign="justify">
+            Proyecto Individual de Henry donde debía implementar una barra buscadora de países; mediante información traída desde una api externa; a su vez, conformar una serie de filtros para la búsqueda de dichos países; una landing page; un paginado, y por último la creación de una actividad turística mediante una ruta post.
+Las tecnologías utilizadas fueron React, React-Redux, Sequelize, PostgreSQL, Express, CSS.
+            </Text>
+        </Box>
+        </Flex>
+        <Text fontSize= "22px" fontWeight="bold" color="yellow.300" marginLeft= "140px">
+React - React - Redux - Node.js - Express.Js - Sequelize - PostgreSQL
+        </Text>
+        <br />
+        
+        <Box marginLeft= "100px">
+        <Link href="https://github.com/Matu36/PI-Countries-mainACTUALIZADO">
+        <Icon as={FaGithub} size="lg" style={{ margin: "0 10px", fontSize: "30px" }} />
+        </Link>
+        <Link href= " https://fronttpais.onrender.com/">
+        <Icon as={FaGlobe} size="lg" style={{ margin: "0 10px", fontSize: "30px" }} />
+        </Link>
+        </Box>
+      </Box>
+      <br />
+      <br />
+
     </Box>
   );
 }

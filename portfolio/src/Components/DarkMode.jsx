@@ -7,7 +7,7 @@ export default function ColorModeSwitcher() {
   
   return (
     <IconButton
-      icon={colorMode === "light" ? <MoonIcon /> : <SunIcon color="white" />}
+      icon={colorMode === "light" ? <MoonIcon /> : <SunIcon color="black" />}
      
       onClick={toggleColorMode}
       size="lg"
