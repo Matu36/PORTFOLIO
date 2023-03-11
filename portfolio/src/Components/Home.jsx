@@ -165,7 +165,7 @@ React - React - Redux - Node.js - Express.Js - Sequelize - PostgreSQL
         <Link href="https://github.com/Matu36/PI-Countries-mainACTUALIZADO" target="_blank" rel="noopener noreferrer">
         <Icon as={FaGithub} size="lg" style={{ margin: "0 10px", fontSize: "30px" }} />
         </Link>
-        <Link href= " https://fronttpais.onrender.com/" target="_blank" rel="noopener noreferrer">
+        <Link href= " https://fronttpais.onrender.com/" >
         <Icon as={FaGlobe} size="lg" style={{ margin: "0 10px", fontSize: "30px" }} />
         </Link>
         </Box>
