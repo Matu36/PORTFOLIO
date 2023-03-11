@@ -22,7 +22,7 @@ export default function NavBar() {
           <Button as="a" href="#Proyectos" w="50px" fontSize="20px" top="1" width="auto">
             Proyectos
           </Button>
-          <Button w="50px" fontSize="20px" top="1" width="auto">
+          <Button as="a" href="#Contacto"w="50px" fontSize="20px" top="1" width="auto">
             Contacto
           </Button>
           <DarkMode />

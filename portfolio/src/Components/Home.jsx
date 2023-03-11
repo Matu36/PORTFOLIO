@@ -5,7 +5,8 @@ import CV from "../Utils/CV.DEVELOPER.pdf";
 import Cards from "./Cards";
 import countries from "../img/countries.png";
 import { Icon, Link } from "@chakra-ui/react";
-import { FaGithub, FaGlobe } from "react-icons/fa";
+import { FaGithub, FaGlobe, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import mangiare from "../img/mangiare.png";
 
 export default function Home() {
   return (
@@ -159,19 +160,109 @@ Las tecnologías utilizadas fueron React, React-Redux, Sequelize, PostgreSQL, Ex
 React - React - Redux - Node.js - Express.Js - Sequelize - PostgreSQL
         </Text>
         <br />
-        
+
         <Box marginLeft= "100px">
-        <Link href="https://github.com/Matu36/PI-Countries-mainACTUALIZADO">
+        <Link href="https://github.com/Matu36/PI-Countries-mainACTUALIZADO" target="_blank" rel="noopener noreferrer">
         <Icon as={FaGithub} size="lg" style={{ margin: "0 10px", fontSize: "30px" }} />
         </Link>
-        <Link href= " https://fronttpais.onrender.com/">
+        <Link href= " https://fronttpais.onrender.com/" target="_blank" rel="noopener noreferrer">
         <Icon as={FaGlobe} size="lg" style={{ margin: "0 10px", fontSize: "30px" }} />
         </Link>
         </Box>
       </Box>
       <br />
       <br />
+      <Text fontSize= "30px" fontWeight="bold"  marginLeft= "100px">
+       Aplicación de Comida
+      </Text>
+      <br />
+      <Flex>
+      <Box
+          marginLeft="100px"
+          width="800px"
+          height="400px"
+          borderWidth="10px"
+          borderRadius="2g"
+          overflow="hidden"
+          boxShadow="lg"
+          transition="all 0.2s ease-in-out"
+          _hover={{
+            transform: "scale(1.05)",
+            boxShadow: "xl",
+          }}
+        >
+          <Image
+            src={mangiare}
+            alt="Card image"
+            width="100%"
+            height="100%"
+            objectFit="cover"
+          />
+        </Box>
+        <Box width= "30%">
+            <Text fontSize= "17px" fontWeight= "bold" fontFamily= "sans-serif" textAlign="justify">
+            Mangiar-e es una aplicación que viene a facilitarte la vida!
+Solo tenes que incluir los ingredientes que tenes a mano y Mangiar-e matchea las recetas disponibles que incluyan dichos ingredientes!
+También podes filtrar las recetas de acuerdo al tipo de dietas (vegan diet, ovo diet, etc), al precio, al rating y por orden alfabético.
+Además de esta increíble funcionalidad, podes crear tu propia receta e incluirla en la base de datos de Mangiar-e; de esta forma estarán disponibles para otros usuarios!
+Podés poner tu reseña de cualquier receta, así como también incluirla en tus favoritos!
+Si te falta algún ingrediente para llevar a cabo tu receta, Mangiar-e te da la posibilidad de poder comprarlo mediante MercadoPago!
+            </Text>
+        </Box>
+        </Flex>
+        <Text fontSize= "22px" fontWeight="bold" color="yellow.300" marginLeft= "90px">
+React - React - Redux - Node.js - Express.Js - Sequelize - PostgreSQL- Chakra UI
+        </Text>
+        <br />
 
-    </Box>
+        <Box marginLeft= "100px">
+        <Link href="https://github.com/Matu36/MANGIARE" target="_blank" rel="noopener noreferrer">
+        <Icon as={FaGithub} size="lg" style={{ margin: "0 10px", fontSize: "30px" }} />
+        </Link>
+        <Link href= "https://mangiare.vercel.app/" target="_blank" rel="noopener noreferrer">
+        <Icon as={FaGlobe} size="lg" style={{ margin: "0 10px", fontSize: "30px" }} />
+        </Link>
+        </Box>
+        <br />
+        <br />
+        <Box id="Contacto">
+      <Text
+        fontSize="50px"
+        marginLeft="100px"
+        fontWeight="bold"
+        textDecoration="underline"
+        textDecorationColor="cyan.700"
+      >
+        Contacto
+      </Text>
+      <Text fontSize= "22px" fontWeight="bold" color="yellow.300" marginLeft= "100px">
+        Enviame un mensaje o un correo electrónico
+      </Text>
+      <br />
+      <br />
+      <Flex marginLeft="100px">
+      <Box>
+        <Link href="https://github.com/Matu36" target="_blank" rel="noopener noreferrer">
+        <FaGithub size={50} style={{ margin: "0 10px", fontSize: "30px" }} />
+        </Link>
+        </Box>
+        <Box>
+        <Link href="https://www.linkedin.com/in/matu-pineda/" target="_blank" rel="noopener noreferrer">
+        <FaLinkedin size={50} style={{ margin: "0 10px", fontSize: "30px" }}/>
+      </Link>
+      </Box>
+      <Box>
+      <Link href="mailto:matipineda85@live.com.ar" target="_blank" rel="noopener noreferrer">
+        <FaEnvelope size={50} style={{ margin: "0 10px", fontSize: "30px" }}/>
+      </Link>
+      </Box>
+        
+        </Flex>
+        <br />
+        <br />
+
+      </Box>
+      </Box>
+    
   );
 }
