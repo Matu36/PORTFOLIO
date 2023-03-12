@@ -7,6 +7,7 @@ import countries from "../img/countries.png";
 import { Icon, Link } from "@chakra-ui/react";
 import { FaGithub, FaGlobe, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import mangiare from "../img/mangiare.png";
+import matu from "../img/Matu.png";
 
 export default function Home() {
   return (
@@ -42,12 +43,26 @@ export default function Home() {
         </Text>
         </Box>
       </Box>
+      <br />
+      <Flex marginLeft= "350px">
+      
+
+        <Box>
+          <Image src= {matu} borderRadius="md"
+           boxShadow="10px 10px 10px gray"
+           opacity="0.9">
+
+          </Image>
+        </Box>
       <a href={CV} target="_blank" rel="noopener noreferrer">
-        <Button mt={6} size="lg" marginLeft="100px" colorScheme="yellow">
+        <Button mt={6} size="lg" marginLeft="170px" colorScheme="yellow">
           <Text fontSize= "25px" fontFamily= "sans-serif" fontWeight= "bold">Ver mi CV </Text>
         </Button>
+        
       </a>
-      <br />
+      
+      </Flex>
+      
       <br />
       <br />
       <br />
@@ -129,6 +144,7 @@ Ser programador es prolongar la infancia! :)
       <Flex>
       <Box
           marginLeft="100px"
+          marginRight="20px"
           width="800px"
           height="400px"
           borderWidth="10px"
@@ -150,7 +166,7 @@ Ser programador es prolongar la infancia! :)
           />
         </Box>
         <Box width= "30%">
-            <Text fontSize= "22px" fontWeight= "bold" fontFamily= "sans-serif" textAlign="justify">
+            <Text fontSize= "17px" fontWeight= "bold" fontFamily= "sans-serif" textAlign="justify">
             Proyecto Individual de Henry donde debía implementar una barra buscadora de países; mediante información traída desde una api externa; a su vez, conformar una serie de filtros para la búsqueda de dichos países; una landing page; un paginado, y por último la creación de una actividad turística mediante una ruta post.
 Las tecnologías utilizadas fueron React, React-Redux, Sequelize, PostgreSQL, Express, CSS.
             </Text>
@@ -179,6 +195,7 @@ React - React - Redux - Node.js - Express.Js - Sequelize - PostgreSQL
       <Flex>
       <Box
           marginLeft="100px"
+          marginRight="20px"
           width="800px"
           height="400px"
           borderWidth="10px"
