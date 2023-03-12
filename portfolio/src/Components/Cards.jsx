@@ -12,29 +12,33 @@ import git from "../img/git.png";
 export default function Cards() {
   return (
     <Box>
-      <Flex>
-        <Box
-          marginLeft="100px"
-          width="200px"
-          height="200px"
-          borderWidth="10px"
-          borderRadius="2g"
-          overflow="hidden"
-          boxShadow="lg"
-          transition="all 0.2s ease-in-out"
-          _hover={{
-            transform: "scale(1.05)",
-            boxShadow: "xl",
-          }}
-        >
-          <Image
-            src={LogoReact}
-            alt="Card image"
-            width="100%"
-            height="100%"
-            objectFit="cover"
-          />
-        </Box>
+  <Flex marginBottom={{ base: "0", md: "8" }}
+    w="100%"
+    flexDirection={{ base: "column", md: "row" }}
+    justifyContent="center"
+  >
+    <Box
+      marginLeft="100px"
+      width="200px"
+      height="200px"
+      borderWidth="10px"
+      borderRadius="2g"
+      overflow="hidden"
+      boxShadow="lg"
+      transition="all 0.2s ease-in-out"
+      _hover={{
+        transform: "scale(1.05)",
+        boxShadow: "xl",
+      }}
+    >
+      <Image
+        src={LogoReact}
+        alt="Card image"
+        width="100%"
+        height="100%"
+        objectFit="cover"
+      />
+    </Box>
         <Box
           marginLeft="100px"
           width="200px"
@@ -98,7 +102,9 @@ export default function Cards() {
       <br />
       <br />
 
-      <Flex>
+      <Flex w="100%" marginTop="0"
+    flexDirection={{ base: "column", md: "row" }}
+    justifyContent="center">
         
         <Box
           marginLeft="100px"

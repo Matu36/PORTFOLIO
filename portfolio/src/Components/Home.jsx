@@ -11,7 +11,14 @@ import matu from "../img/Matu.png";
 
 export default function Home() {
   return (
-    <Box>
+    <Box style={{
+      fontSize: "20px",
+      width: "100%",
+      "@media screen and (max-width: 768px)": {
+        fontSize: "16px",
+        width: "90%",
+      },
+    }}> 
       <NavBar />
       <br />
       <br />
