@@ -5,6 +5,7 @@ import { Button, Box, Flex } from "@chakra-ui/react";
 export default function NavBar() {
   return (
     <Box
+    
   position="fixed"
   top="0"
   left="0"

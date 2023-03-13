@@ -21,7 +21,7 @@ export default function Cards() {
     
   >
     <Box
-      marginLeft={{base: 50, md: "100px"}}
+      marginLeft={{base: 0, md: "100px"}}
       width="200px"
       height="200px"
       borderWidth="10px"
@@ -43,7 +43,7 @@ export default function Cards() {
       />
     </Box>
         <Box
-          marginLeft={{base: 50, md: "100px"}}
+          marginLeft={{base: 0, md: "100px"}}
           width="200px"
           height="200px"
           borderWidth="10px"
@@ -64,7 +64,7 @@ export default function Cards() {
           />
         </Box>
         <Box
-          marginLeft={{base: 50, md: "100px"}}
+          marginLeft={{base: 0, md: "100px"}}
           width="200px"
           height="200px"
           borderWidth="10px"
@@ -80,7 +80,7 @@ export default function Cards() {
           <Image src={css} alt="Card image" width="100%" objectFit="cover" />
         </Box>
         <Box
-          marginLeft={{base: 50, md: "100px"}}
+          marginLeft={{base: 0, md: "100px"}}
           width="200px"
           height="200px"
           borderWidth="10px"
@@ -110,7 +110,7 @@ export default function Cards() {
     justifyContent="center "marginTop={{base:-850 , md: "0"}}>
         
         <Box
-          marginLeft={{base: 320, md: "100px"}}
+          marginLeft={{base: 210, md: "100px"}}
           width="200px"
           height="200px"
           borderWidth="10px"
@@ -133,7 +133,7 @@ export default function Cards() {
           </Box>
 
           <Box
-          marginLeft={{base: 320, md: "100px"}}
+          marginLeft={{base: 210, md: "100px"}}
           width="200px"
           height="200px"
           borderWidth="10px"
@@ -155,7 +155,7 @@ export default function Cards() {
           />
         </Box>
         <Box
-          marginLeft={{base: 320, md: "100px"}}
+          marginLeft={{base: 210, md: "100px"}}
           width="200px"
           height="200px"
           borderWidth="10px"
@@ -177,7 +177,7 @@ export default function Cards() {
           />
         </Box>
         <Box
-          marginLeft={{base: 320, md: "100px"}}
+          marginLeft={{base: 210, md: "100px"}}
           width="200px"
           height="200px"
           borderWidth="10px"

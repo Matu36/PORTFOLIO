@@ -15,7 +15,7 @@ export default function Home() {
       <NavBar />
       <br />
       <br />
-      <Box
+      <Box 
         id="inicio"
         display="flex"
         flexDirection="column"
@@ -23,27 +23,13 @@ export default function Home() {
         justifyContent="center"
         textAlign="center"
         margin="30px"
-        style={{
-          "@media screen and (max-width: 768px)": {
-            
-            width: "150%",
-            justifyContent: "center",
-            marginLeft: "0px",
-          },
-          maxWidth: "100%",
-        }}
+        
       >
         <Text
+        marginTop= {{ base: "30px", md: "0" }}
           fontSize={{ base: "50px", md: "70px" }}
           fontWeight="extrabold"
-          style={{
-            "@media screen and (max-width: 768px)": {
-              fontSize: "20%",
-             
-              justifyContent: "center",
-            },
-            maxWidth: "200%",
-          }}
+          
         >
           Matías Pineda
         </Text>
@@ -96,33 +82,24 @@ export default function Home() {
           },
           maxWidth: "100%",
         }}>
-        <Box style={{
-              "@media screen and (max-width: 768px)": {
-    
-                justifyContent: "center",
-                marginLeft: "0px",
-              },
-              maxWidth: "100%",
-            }}>
+        <Box>
           <Image 
             src={matu}
             borderRadius="md"
             boxShadow="10px 10px 10px gray"
             opacity="0.9"
-            style={{
-              "@media screen and (max-width: 768px)": {
-                size: "500px",
-                marginTop: "0",
-                justifyContent: "center",
-                marginLeft: "0px",
-              },
-              maxWidth: "100%",
-            }}>
+            marginTop={{base: "0", md: "0"}}
+            marginLeft={{base: "-70", md: "0"}}
+           >
             
           </Image>
         </Box>
         <a href={CV} target="_blank" rel="noopener noreferrer">
-          <Button mt={6} size="lg" marginTop= "260px" colorScheme="yellow">
+          <Button mt={6} 
+          size="lg" 
+          colorScheme="yellow"
+          marginTop={{base: "-100", md: "260px"}}
+          marginLeft={{base: "-70", md: "0"}}>
             <Text fontSize="25px" fontFamily="sans-serif" fontWeight="bold"
             style={{
               "@media screen and (max-width: 768px)": {
@@ -235,7 +212,7 @@ export default function Home() {
             marginLeft={{base: 5, md: "100px"}}
             marginRight="20px"
             width= {{ base: "100%", md: "800px" }}
-            height="400px"
+            height={{ base: "80%", md: "400px" }}
             borderWidth="10px"
             borderRadius="2g"
             overflow="hidden"
@@ -314,7 +291,7 @@ export default function Home() {
           marginLeft={{base: 5, md: "100px"}}
           marginRight="20px"
           width= {{ base: "100%", md: "800px" }}
-          height="400px"
+          height={{ base: "80%", md: "400px" }}
           borderWidth="10px"
           borderRadius="2g"
           overflow="hidden"
