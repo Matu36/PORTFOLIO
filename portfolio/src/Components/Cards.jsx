@@ -12,13 +12,16 @@ import git from "../img/git.png";
 export default function Cards() {
   return (
     <Box>
+      
   <Flex marginBottom={{ base: "0", md: "8" }}
+  
     w="100%"
     flexDirection={{ base: "column", md: "row" }}
     justifyContent="center"
+    
   >
     <Box
-      marginLeft="100px"
+      marginLeft={{base: 50, md: "100px"}}
       width="200px"
       height="200px"
       borderWidth="10px"
@@ -40,7 +43,7 @@ export default function Cards() {
       />
     </Box>
         <Box
-          marginLeft="100px"
+          marginLeft={{base: 50, md: "100px"}}
           width="200px"
           height="200px"
           borderWidth="10px"
@@ -61,7 +64,7 @@ export default function Cards() {
           />
         </Box>
         <Box
-          marginLeft="100px"
+          marginLeft={{base: 50, md: "100px"}}
           width="200px"
           height="200px"
           borderWidth="10px"
@@ -77,7 +80,7 @@ export default function Cards() {
           <Image src={css} alt="Card image" width="100%" objectFit="cover" />
         </Box>
         <Box
-          marginLeft="100px"
+          marginLeft={{base: 50, md: "100px"}}
           width="200px"
           height="200px"
           borderWidth="10px"
@@ -102,12 +105,12 @@ export default function Cards() {
       <br />
       <br />
 
-      <Flex w="100%" marginTop="0"
+      <Flex w="100%" 
     flexDirection={{ base: "column", md: "row" }}
-    justifyContent="center">
+    justifyContent="center "marginTop={{base:-850 , md: "0"}}>
         
         <Box
-          marginLeft="100px"
+          marginLeft={{base: 320, md: "100px"}}
           width="200px"
           height="200px"
           borderWidth="10px"
@@ -130,7 +133,7 @@ export default function Cards() {
           </Box>
 
           <Box
-          marginLeft="100px"
+          marginLeft={{base: 320, md: "100px"}}
           width="200px"
           height="200px"
           borderWidth="10px"
@@ -152,7 +155,7 @@ export default function Cards() {
           />
         </Box>
         <Box
-          marginLeft="100px"
+          marginLeft={{base: 320, md: "100px"}}
           width="200px"
           height="200px"
           borderWidth="10px"
@@ -174,7 +177,7 @@ export default function Cards() {
           />
         </Box>
         <Box
-          marginLeft="100px"
+          marginLeft={{base: 320, md: "100px"}}
           width="200px"
           height="200px"
           borderWidth="10px"
