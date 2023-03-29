@@ -369,6 +369,9 @@ export default function Home() {
           />
         </Link>
       </Box>
+      <br />
+      <br />
+      
       <Text fontSize="30px" fontWeight="bold" marginLeft={{base: 5, md: "100px"}}>
           E-Commerce
         </Text>

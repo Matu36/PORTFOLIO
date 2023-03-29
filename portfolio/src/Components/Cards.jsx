@@ -8,6 +8,8 @@ import express from "../img/express.png";
 import postgres from "../img/postgres.jpg";
 import seque from "../img/seque.png";
 import git from "../img/git.png";
+import PHP from "../img/PHP.jpg";
+import SYMFONY from "../img/SYMFONY.jpg";
 
 export default function Cards() {
   return (
@@ -200,6 +202,71 @@ export default function Cards() {
         </Box>
         
         
+      </Flex>
+      <br />
+      <br />
+      <br />
+
+      <Flex marginBottom={{ base: "0", md: "8" }}
+  
+  w="100%"
+  flexDirection={{ base: "column", md: "row" }}
+  justifyContent="center">
+      <Box
+      marginLeft={{base: 0, md: "100px"}}
+      marginTop= {{base: "-4rem", md: "0rem"}}
+          width="200px"
+          height="200px"
+          borderWidth="10px"
+          borderRadius="2g"
+          overflow="hidden"
+          boxShadow="lg"
+          transition="all 0.2s ease-in-out"
+          _hover={{
+            transform: "scale(1.05)",
+            boxShadow: "xl",
+          }}
+        >
+          <Image
+            src={PHP}
+            alt="Card image"
+            width="100%"
+            height="100%"
+            objectFit="cover"
+          />
+     
+
+      </Box>
+      <Box
+      marginLeft={{base: 210, md: "100px"}}
+      marginTop= {{base: "-12.5rem", md: "0rem"}}
+          width="200px"
+          height="200px"
+          borderWidth="10px"
+          borderRadius="2g"
+          overflow="hidden"
+          boxShadow="lg"
+          transition="all 0.2s ease-in-out"
+          _hover={{
+            transform: "scale(1.05)",
+            boxShadow: "xl",
+          }}
+        >
+          <Image
+            src={SYMFONY}
+            alt="Card image"
+            width="100%"
+            height="100%"
+            objectFit="cover"
+          />
+
+
+      </Box>
+
+
+
+      
+      
       </Flex>
     </Box>
   );
