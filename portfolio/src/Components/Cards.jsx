@@ -19,11 +19,12 @@ export default function Cards() {
   
     w="100%"
     flexDirection={{ base: "column", md: "row" }}
-    justifyContent="center"
+    justifyContent="center" 
+    alignItems="flex-start"
     
   >
     <Box
-      marginLeft={{base: 0, md: "100px"}}
+      marginLeft={{base: "0", md: "100px"}}
       width="200px"
       height="200px"
       borderWidth="10px"
@@ -47,7 +48,7 @@ export default function Cards() {
         <Box
           marginLeft={{base: 0, md: "100px"}}
           width="200px"
-          height="200px"
+          height="100%"
           borderWidth="10px"
           borderRadius="2g"
           overflow="hidden"
@@ -68,7 +69,7 @@ export default function Cards() {
         <Box
           marginLeft={{base: 0, md: "100px"}}
           width="200px"
-          height="200px"
+          height="100%"
           borderWidth="10px"
           borderRadius="2g"
           overflow="hidden"
@@ -108,7 +109,7 @@ export default function Cards() {
       <br />
 
       <Flex w="100%" 
-    flexDirection={{ base: "column", md: "row" }}
+    flexDirection={{ base: "column", md: "row" }}alignItems="flex-end"
     justifyContent="center "marginTop={{base:-850 , md: "0"}}>
         
         <Box
@@ -211,10 +212,11 @@ export default function Cards() {
   
   w="100%"
   flexDirection={{ base: "column", md: "row" }}
-  justifyContent="center">
+  justifyContent="center"> 
       <Box
       marginLeft={{base: 0, md: "100px"}}
       marginTop= {{base: "-4rem", md: "0rem"}}
+      alignItems={{base:"flex-start"}}
           width="200px"
           height="200px"
           borderWidth="10px"
@@ -240,6 +242,7 @@ export default function Cards() {
       <Box
       marginLeft={{base: 210, md: "100px"}}
       marginTop= {{base: "-12.5rem", md: "0rem"}}
+      alignItems={{base:"flex-end"}}
           width="200px"
           height="200px"
           borderWidth="10px"

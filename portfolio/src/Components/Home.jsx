@@ -8,7 +8,7 @@ import { Icon, Link } from "@chakra-ui/react";
 import { FaGithub, FaGlobe, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import mangiare from "../img/mangiare.png";
 import matu from "../img/Matu.png";
-import ECOMMERCE from "../img/ECOMMERCE.png";
+import ECOMMERCE from "../img/ECOMMERCE.jpg";
 
 export default function Home() {
   return (
@@ -327,10 +327,7 @@ export default function Home() {
             (vegan diet, ovo diet, etc), al precio, al rating y por orden
             alfabético. Además de esta increíble funcionalidad, podes crear tu
             propia receta e incluirla en la base de datos de Mangiar-e; de esta
-            forma estarán disponibles para otros usuarios! Podés poner tu reseña
-            de cualquier receta, así como también incluirla en tus favoritos! Si
-            te falta algún ingrediente para llevar a cabo tu receta, Mangiar-e
-            te da la posibilidad de poder comprarlo mediante MercadoPago!
+            forma estarán disponibles para otros usuarios! 
           </Text>
         </Box>
       </Flex>
@@ -411,7 +408,7 @@ export default function Home() {
               Proyecto Personal que busca contemplar una plantilla genérica para distintas empresas o 
               pymes a fin de satisfacer las necesidades del cliente. Tiene integrado logueo de usuario,
               Carrito de compras con MercadoPago, Panel de administrador, Barra buscadora de comidas, 
-              Filtros de comidas por categorías.
+              Filtros de comidas por categorías; Posibilidad de pago con MercadoPago y Stripe Credit Card.
             </Text>
           </Box>
         </Flex>
@@ -421,7 +418,8 @@ export default function Home() {
           color="yellow.300"
           marginLeft={{base: 5, md: "140px"}}
         >
-          React - React - Redux - Node.js - Express.Js - Sequelize - PostgreSQL
+          React - React - Redux - Node.js - Express.Js - Sequelize - PostgreSQL - 
+          Chakra-ui - Lottie Files - Framer Motion - AUTH0 - Stripe
         </Text>
         <br />
 
@@ -437,13 +435,13 @@ export default function Home() {
               style={{ margin: "0 10px", fontSize: "30px" }}
             />
           </Link>
-          {/* <Link href=" https://fronttpais.onrender.com/">
+           <Link href="https://buenprovecho.vercel.app/">
             <Icon
               as={FaGlobe}
               size="lg"
               style={{ margin: "0 10px", fontSize: "30px" }}
             />
-          </Link> */}
+          </Link> 
         </Box>
       
       
