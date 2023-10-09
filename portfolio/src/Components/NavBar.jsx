@@ -1,8 +1,11 @@
 import React from "react";
 import DarkMode from "../Components/DarkMode";
-import { Button, Box, Flex } from "@chakra-ui/react";
+import { Button, Box, Flex, Text, useColorModeValue, } from "@chakra-ui/react";
 
 export default function NavBar() {
+
+  
+  const textColor = useColorModeValue("gray.800");
   return (
     <Box
     
@@ -12,6 +15,8 @@ export default function NavBar() {
   right="0"
   backgroundColor="gray.300"
   color="black"
+  height="80px"
+  zIndex="999"
 >
   <Flex
     justifyContent="space-between"
@@ -21,6 +26,13 @@ export default function NavBar() {
     mx="auto"
     px={3}
   >
+     <Text
+          fontSize={{ base: "20px", md: "24px" }}
+          fontWeight="bold"
+          color={textColor}
+        >
+          Mi Portfolio!
+        </Text>
     <Button
       as="a"
       href="#inicio"
@@ -28,6 +40,9 @@ export default function NavBar() {
       mr={{ base: "0", md: "10px" }}
       mb={{ base: "10px", md: "0" }}
       width="auto"
+      backgroundColor="transparent"
+  _hover={{ backgroundColor: "transparent" }} // Para quitar el color de fondo en el hover
+  _active={{ backgroundColor: "transparent" }}
     >
       Inicio
     </Button>
@@ -38,6 +53,9 @@ export default function NavBar() {
       mr={{ base: "0", md: "10px" }}
       mb={{ base: "10px", md: "0" }}
       width="auto"
+      backgroundColor="transparent"
+  _hover={{ backgroundColor: "transparent" }} // Para quitar el color de fondo en el hover
+  _active={{ backgroundColor: "transparent" }}
     >
       Sobre mi
     </Button>
@@ -48,6 +66,9 @@ export default function NavBar() {
       mr={{ base: "0", md: "10px" }}
       mb={{ base: "10px", md: "0" }}
       width="auto"
+      backgroundColor="transparent"
+  _hover={{ backgroundColor: "transparent" }} // Para quitar el color de fondo en el hover
+  _active={{ backgroundColor: "transparent" }}
     >
       Habilidades
     </Button>
@@ -58,6 +79,9 @@ export default function NavBar() {
       mr={{ base: "0", md: "10px" }}
       mb={{ base: "10px", md: "0" }}
       width="auto"
+      backgroundColor="transparent"
+  _hover={{ backgroundColor: "transparent" }} // Para quitar el color de fondo en el hover
+  _active={{ backgroundColor: "transparent" }}
     >
       Proyectos
     </Button>
@@ -68,6 +92,9 @@ export default function NavBar() {
       mr={{ base: "0", md: "10px" }}
       mb={{ base: "10px", md: "0" }}
       width="auto"
+      backgroundColor="transparent"
+  _hover={{ backgroundColor: "transparent" }} // Para quitar el color de fondo en el hover
+  _active={{ backgroundColor: "transparent" }}
     >
       Contacto
     </Button>

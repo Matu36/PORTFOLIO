@@ -2,13 +2,14 @@ import React from "react";
 import NavBar from "./NavBar";
 import { Text, Box, Button, Image, Flex } from "@chakra-ui/react";
 import CV from "../Utils/CV.ACTUALIZADO.pdf";
-import Cards from "./Cards";
 import countries from "../img/PAISESNUEVO.png";
+import palitos from "../img/Palitos.jpg";
 import { Icon, Link } from "@chakra-ui/react";
 import { FaGithub, FaGlobe, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import mangiare from "../img/mangiare.png";
 import matu from "../img/Matu.png";
-import ECOMMERCE from "../img/ECOMMERCE.jpg";
+import ECOMMERCE from "../img/buenProvechoNuevo.png";
+import Carrousel from "../Components/Styles/Carrousel";
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
       <NavBar />
       <br />
       <br />
-      <Box 
+      <Box
         id="inicio"
         display="flex"
         flexDirection="column"
@@ -24,13 +25,11 @@ export default function Home() {
         justifyContent="center"
         textAlign="center"
         margin="30px"
-        
       >
         <Text
-        marginTop= {{ base: "30px", md: "0" }}
+          marginTop={{ base: "30px", md: "0" }}
           fontSize={{ base: "50px", md: "70px" }}
           fontWeight="extrabold"
-          
         >
           Matías Pineda
         </Text>
@@ -70,46 +69,50 @@ export default function Home() {
         </Box>
       </Box>
       <br />
-      <Flex 
+      <Flex
         alignItems="center"
         textAlign="center"
         marginLeft="100px"
         style={{
           "@media screen and (max-width: 768px)": {
-            flexDirection:"column",
-            alignItems:"center",
-        textAlign:"center",
-        
+            flexDirection: "column",
+            alignItems: "center",
+            textAlign: "center",
           },
           maxWidth: "100%",
-        }}>
+        }}
+      >
         <Box>
-          <Image 
+          <Image
             src={matu}
             borderRadius="md"
             boxShadow="10px 10px 10px gray"
             opacity="0.9"
-            marginTop={{base: "0", md: "0"}}
-            marginLeft={{base: "-70", md: "0"}}
-           >
-            
-          </Image>
+            marginTop={{ base: "0", md: "0" }}
+            marginLeft={{ base: "-70", md: "0" }}
+          ></Image>
         </Box>
         <a href={CV} target="_blank" rel="noopener noreferrer">
-          <Button mt={6} 
-          size="lg" 
-          colorScheme="yellow"
-          marginTop={{base: "-100", md: "260px"}}
-          marginLeft={{base: "-70", md: "0"}}>
-            <Text fontSize="25px" fontFamily="sans-serif" fontWeight="bold"
-            style={{
-              "@media screen and (max-width: 768px)": {
-    marginTop: "0",
-                justifyContent: "center",
-                marginLeft: "0px",
-              },
-              maxWidth: "100%",
-            }}>
+          <Button
+            mt={6}
+            size="lg"
+            colorScheme="yellow"
+            marginTop={{ base: "-100", md: "260px" }}
+            marginLeft={{ base: "-70", md: "0" }}
+          >
+            <Text
+              fontSize="25px"
+              fontFamily="sans-serif"
+              fontWeight="bold"
+              style={{
+                "@media screen and (max-width: 768px)": {
+                  marginTop: "0",
+                  justifyContent: "center",
+                  marginLeft: "0px",
+                },
+                maxWidth: "100%",
+              }}
+            >
               Ver mi CV{" "}
             </Text>
           </Button>
@@ -122,23 +125,22 @@ export default function Home() {
       <Box id="sobre-mi">
         <Text
           fontSize="50px"
-          marginLeft={{base: 5, md: "100px"}}
+          marginLeft={{ base: 5, md: "50px" }}
           fontWeight="bold"
           textDecoration="underline"
           textDecorationColor="cyan.700"
-          
         >
           Sobre mi
         </Text>
         <br />
         <Text
-          marginLeft={{base: 5, md: "100px"}}
+          marginLeft={{ base: 5, md: "50px" }}
           textAlign="justify"
           maxWidth="1000px"
           fontWeight="bold"
           fontSize={{ base: "16px", md: "18px" }}
           w={{ base: "100%", md: "auto" }}
-  width={{ base: "90%", md: "auto" }}
+          width={{ base: "90%", md: "auto" }}
         >
           Les cuento un poco de mi! Desde los 18 años hasta los 23 estudie el
           profesorado de Educación Física en la Universidad Nacional de La
@@ -162,7 +164,7 @@ export default function Home() {
       <Box id="Habilidades">
         <Text
           fontSize="50px"
-          marginLeft={{base: 5, md: "100px"}}
+          marginLeft={{ base: 5, md: "50px" }}
           fontWeight="bold"
           textDecoration="underline"
           textDecorationColor="cyan.700"
@@ -173,21 +175,21 @@ export default function Home() {
           fontSize="22px"
           fontWeight="bold"
           color="yellow.300"
-          marginLeft={{base: 5, md: "100px"}}
+          marginLeft={{ base: 5, md: "50px" }}
         >
           Estas son las tecnologías con las que he trabajado
         </Text>
         <br />
         <br />
 
-        <Cards />
+        <Carrousel />
         <br />
         <br />
       </Box>
       <Box id="Proyectos">
         <Text
           fontSize="50px"
-          marginLeft={{base: 5, md: "100px"}}
+          marginLeft={{ base: 5, md: "50px" }}
           fontWeight="bold"
           textDecoration="underline"
           textDecorationColor="cyan.700"
@@ -198,21 +200,25 @@ export default function Home() {
           fontSize="22px"
           fontWeight="bold"
           color="yellow.300"
-          marginLeft={{base: 5, md: "100px"}}
+          marginLeft={{ base: 5, md: "50px" }}
         >
           Mis proyectos más recientes
         </Text>
         <br />
         <br />
-        <Text fontSize="30px" fontWeight="bold" marginLeft={{base: 5, md: "100px"}}>
+        <Text
+          fontSize="30px"
+          fontWeight="bold"
+          marginLeft={{ base: 5, md: "50px" }}
+        >
           Aplicación de Países
         </Text>
         <br />
         <Flex flexDirection={{ base: "column", md: "row" }}>
           <Box
-            marginLeft={{base: 5, md: "100px"}}
+            marginLeft={{ base: 5, md: "50px" }}
             marginRight="20px"
-            width= {{ base: "100%", md: "800px" }}
+            width={{ base: "100%", md: "800px" }}
             height={{ base: "80%", md: "400px" }}
             borderWidth="10px"
             borderRadius="2g"
@@ -232,9 +238,9 @@ export default function Home() {
               objectFit="cover"
             />
           </Box>
-          <Box width={{base: "100%", md: "30%"}}>
+          <Box width={{ base: "100%", md: "25%" }}>
             <Text
-            marginLeft={{base: 7, md: "0"}}
+              marginLeft={{ base: 7, md: "0" }}
               fontSize="17px"
               fontWeight="bold"
               fontFamily="sans-serif"
@@ -254,13 +260,14 @@ export default function Home() {
           fontSize="22px"
           fontWeight="bold"
           color="yellow.300"
-          marginLeft={{base: 5, md: "140px"}}
+          marginLeft={{ base: 5, md: "50px" }}
+          marginTop="1rem"
         >
           React - React - Redux - Node.js - Express.Js - Sequelize - PostgreSQL
         </Text>
         <br />
 
-        <Box marginLeft={{base: 5, md: "100px"}}>
+        <Box marginLeft={{ base: 5, md: "50px" }}>
           <Link
             href="https://github.com/Matu36/PI-Countries-mainACTUALIZADO"
             target="_blank"
@@ -283,15 +290,19 @@ export default function Home() {
       </Box>
       <br />
       <br />
-      <Text fontSize="30px" fontWeight="bold" marginLeft={{base: 5, md: "100px"}}>
+      <Text
+        fontSize="30px"
+        fontWeight="bold"
+        marginLeft={{ base: 5, md: "50px" }}
+      >
         Aplicación de Comida
       </Text>
       <br />
       <Flex flexDirection={{ base: "column", md: "row" }}>
         <Box
-          marginLeft={{base: 5, md: "100px"}}
+          marginLeft={{ base: 5, md: "50px" }}
           marginRight="20px"
-          width= {{ base: "100%", md: "800px" }}
+          width={{ base: "100%", md: "800px" }}
           height={{ base: "80%", md: "400px" }}
           borderWidth="10px"
           borderRadius="2g"
@@ -311,14 +322,13 @@ export default function Home() {
             objectFit="cover"
           />
         </Box>
-        <Box width={{base: "100%", md: "35%"}}>
+        <Box width={{ base: "100%", md: "25%" }}>
           <Text
-          marginLeft={{base: 7, md: "0"}}
+            marginLeft={{ base: 7, md: "0" }}
             fontSize="17px"
             fontWeight="bold"
             fontFamily="sans-serif"
             textAlign="justify"
-            
           >
             Mangiar-e es una aplicación que viene a facilitarte la vida! Solo
             tenes que incluir los ingredientes que tenes a mano y Mangiar-e
@@ -327,7 +337,7 @@ export default function Home() {
             (vegan diet, ovo diet, etc), al precio, al rating y por orden
             alfabético. Además de esta increíble funcionalidad, podes crear tu
             propia receta e incluirla en la base de datos de Mangiar-e; de esta
-            forma estarán disponibles para otros usuarios! 
+            forma estarán disponibles para otros usuarios!
           </Text>
         </Box>
       </Flex>
@@ -335,14 +345,15 @@ export default function Home() {
         fontSize="22px"
         fontWeight="bold"
         color="yellow.300"
-        marginLeft={{base: 5, md: "90px"}}
+        marginLeft={{ base: 5, md: "50px" }}
+        marginTop="1rem"
       >
         React - React - Redux - Node.js - Express.Js - Sequelize - PostgreSQL-
         Chakra UI
       </Text>
       <br />
 
-      <Box marginLeft={{base: 5, md: "100px"}}>
+      <Box marginLeft={{ base: 5, md: "50px" }}>
         <Link
           href="https://github.com/Matu36/MANGIARE"
           target="_blank"
@@ -368,89 +379,166 @@ export default function Home() {
       </Box>
       <br />
       <br />
-      
-      <Text fontSize="30px" fontWeight="bold" marginLeft={{base: 5, md: "100px"}}>
-          E-Commerce
-        </Text>
-        <br />
-        <Flex flexDirection={{ base: "column", md: "row" }}>
-          <Box
-            marginLeft={{base: 5, md: "100px"}}
-            marginRight="20px"
-            width= {{ base: "100%", md: "800px" }}
-            height={{ base: "80%", md: "400px" }}
-            borderWidth="10px"
-            borderRadius="2g"
-            overflow="hidden"
-            boxShadow="lg"
-            transition="all 0.2s ease-in-out"
-            _hover={{
-              transform: "scale(1.05)",
-              boxShadow: "xl",
-            }}
-          >
-            <Image
-              src={ECOMMERCE}
-              alt="Card image"
-              width="100%"
-              height="100%"
-              objectFit="cover"
-            />
-          </Box>
-          <Box width={{base: "100%", md: "30%"}}>
-            <Text
-            marginLeft={{base: 7, md: "0"}}
-              fontSize="17px"
-              fontWeight="bold"
-              fontFamily="sans-serif"
-              textAlign="justify"
-            >
-              Proyecto Personal que busca contemplar una plantilla genérica para distintas empresas o 
-              pymes a fin de satisfacer las necesidades del cliente. Tiene integrado logueo de usuario,
-              Carrito de compras con MercadoPago, Panel de administrador, Barra buscadora de comidas, 
-              Filtros de comidas por categorías; Posibilidad de pago con MercadoPago y Stripe Credit Card.
-            </Text>
-          </Box>
-        </Flex>
-        <Text
-          fontSize="22px"
-          fontWeight="bold"
-          color="yellow.300"
-          marginLeft={{base: 5, md: "140px"}}
-        >
-          React - React - Redux - Node.js - Express.Js - Sequelize - PostgreSQL - 
-          Chakra-ui - Lottie Files - Framer Motion - AUTH0 - Stripe
-        </Text>
-        <br />
 
-        <Box marginLeft={{base: 5, md: "100px"}}>
-          <Link
-            href="https://github.com/Matu36/Pymes-Software-Integration"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Icon
-              as={FaGithub}
-              size="lg"
-              style={{ margin: "0 10px", fontSize: "30px" }}
-            />
-          </Link>
-           <Link href="https://buenprovecho.vercel.app/">
-            <Icon
-              as={FaGlobe}
-              size="lg"
-              style={{ margin: "0 10px", fontSize: "30px" }}
-            />
-          </Link> 
+      <Text
+        fontSize="30px"
+        fontWeight="bold"
+        marginLeft={{ base: 5, md: "50px" }}
+      >
+        E-Commerce
+      </Text>
+      <br />
+      <Flex flexDirection={{ base: "column", md: "row" }}>
+        <Box
+          marginLeft={{ base: 5, md: "50px" }}
+          marginRight="20px"
+          width={{ base: "100%", md: "800px" }}
+          height={{ base: "80%", md: "400px" }}
+          borderWidth="10px"
+          borderRadius="2g"
+          overflow="hidden"
+          boxShadow="lg"
+          transition="all 0.2s ease-in-out"
+          _hover={{
+            transform: "scale(1.05)",
+            boxShadow: "xl",
+          }}
+        >
+          <Image
+            src={ECOMMERCE}
+            alt="Card image"
+            width="100%"
+            height="100%"
+            objectFit="cover"
+          />
         </Box>
-      
-      
+        <Box width={{ base: "100%", md: "25%" }}>
+          <Text
+            marginLeft={{ base: 7, md: "0" }}
+            fontSize="17px"
+            fontWeight="bold"
+            fontFamily="sans-serif"
+            textAlign="justify"
+          >
+            Proyecto Personal que busca contemplar una plantilla genérica para
+            distintas empresas o pymes a fin de satisfacer las necesidades del
+            cliente. Tiene integrado logueo de usuario, Carrito de compras con
+            MercadoPago, Panel de administrador, Barra buscadora de comidas,
+            Filtros de comidas por categorías; Posibilidad de pago con
+            MercadoPago y Stripe Credit Card.
+          </Text>
+        </Box>
+      </Flex>
+      <Text
+        fontSize="22px"
+        fontWeight="bold"
+        color="yellow.300"
+        marginLeft={{ base: 5, md: "50px" }}
+        marginTop="1rem"
+      >
+        React - React - Redux - Node.js - Express.Js - Sequelize - PostgreSQL -
+        Chakra-ui - Lottie Files - Framer Motion - AUTH0 - Stripe
+      </Text>
+      <br />
+
+      <Box marginLeft={{ base: 5, md: "50px" }}>
+        <Link
+          href="https://github.com/Matu36/Pymes-Software-Integration"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon
+            as={FaGithub}
+            size="lg"
+            style={{ margin: "0 10px", fontSize: "30px" }}
+          />
+        </Link>
+        <Link href="https://buenprovecho.vercel.app/">
+          <Icon
+            as={FaGlobe}
+            size="lg"
+            style={{ margin: "0 10px", fontSize: "30px" }}
+          />
+        </Link>
+      </Box>
+      <br />
+      <br />
+      <Text
+        fontSize="30px"
+        fontWeight="bold"
+        marginLeft={{ base: 5, md: "50px" }}
+      >
+        Juego de los Palitos
+      </Text>
+      <br />
+      <Flex flexDirection={{ base: "column", md: "row" }}>
+        <Box
+          marginLeft={{ base: 5, md: "50px" }}
+          marginRight="20px"
+          width={{ base: "100%", md: "25%" }}
+          height={{ base: "80%", md: "400px" }}
+          borderWidth="10px"
+          borderRadius="2g"
+          overflow="hidden"
+          boxShadow="lg"
+          transition="all 0.2s ease-in-out"
+          _hover={{
+            transform: "scale(1.05)",
+            boxShadow: "xl",
+          }}
+        >
+          <Image
+            src={palitos}
+            alt="Card image"
+            width="100%"
+            height="100%"
+            objectFit="contain"
+          />
+        </Box>
+        <Box width={{ base: "100%", md: "50%" }}>
+          <Text
+            marginLeft={{ base: 7, md: "0" }}
+            fontSize="17px"
+            fontWeight="bold"
+            fontFamily="sans-serif"
+            textAlign="justify"
+          >
+            Con uno de mis mejores amigos y compañero de banco, en la secundaria
+            jugábamos al juego de los palitos; A modo de recuerdo y de
+            aprendizaje, quise recrear en código el juego que tanto nos
+            divertía. El objetivo del juego es que cada participante va sacando
+            la cantidad de palitos que desea en sentido horizontal; mueve uno,
+            mueve otro; al que le queda un palito pierde!
+          </Text>
+        </Box>
+      </Flex>
+      <Text
+        fontSize="22px"
+        fontWeight="bold"
+        color="yellow.300"
+        marginLeft={{ base: 5, md: "50px" }}
+        marginTop="1rem"
+      >
+        HTML - CSS
+      </Text>
+      <br />
+
+      <Box marginLeft={{ base: 5, md: "50px" }}>
+        <Link href="https://matu36.github.io/PalosHTML/">
+          <Icon
+            as={FaGlobe}
+            size="lg"
+            style={{ margin: "0 10px", fontSize: "30px" }}
+          />
+        </Link>
+      </Box>
+
       <br />
       <br />
       <Box id="Contacto">
         <Text
           fontSize="50px"
-          marginLeft={{base: 5, md: "100px"}}
+          marginLeft={{ base: 5, md: "50px" }}
           fontWeight="bold"
           textDecoration="underline"
           textDecorationColor="cyan.700"
@@ -461,13 +549,13 @@ export default function Home() {
           fontSize="22px"
           fontWeight="bold"
           color="yellow.300"
-          marginLeft={{base: 5, md: "100px"}}
+          marginLeft={{ base: 5, md: "50px" }}
         >
           Enviame un mensaje o un correo electrónico
         </Text>
         <br />
         <br />
-        <Flex marginLeft={{base: 5, md: "100px"}}>
+        <Flex marginLeft={{ base: 5, md: "50px" }}>
           <Box>
             <Link
               href="https://github.com/Matu36"
@@ -480,7 +568,7 @@ export default function Home() {
               />
             </Link>
           </Box>
-          <Box >
+          <Box>
             <Link
               href="https://www.linkedin.com/in/matu-pineda/"
               target="_blank"
@@ -492,7 +580,7 @@ export default function Home() {
               />
             </Link>
           </Box>
-          <Box >
+          <Box>
             <Link
               href="mailto:matipineda85@live.com.ar"
               target="_blank"
