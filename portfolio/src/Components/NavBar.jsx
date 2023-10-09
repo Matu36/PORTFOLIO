@@ -15,7 +15,6 @@ export default function NavBar() {
   right="0"
   backgroundColor="gray.300"
   color="black"
-  height="80px"
   zIndex="999"
 >
   <Flex
