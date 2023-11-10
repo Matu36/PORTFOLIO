@@ -10,6 +10,10 @@ import personal from "../img/POSTMAN.png";
 import DataTable from "react-data-table-component";
 import { tecnologias } from "../Utils/tecnologias";
 import { usePagination } from "../hooks/usePagination";
+import ECOMMERCE from "../img/ECOMMERCE.jpg";
+import Palitos from "../img/palos.png";
+import Paises from "../img/PAISESNUEVO.png";
+import mangiare from "../img/mangiare.png";
 
 export default function Home() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -132,7 +136,7 @@ const biografia = [
           fontFamily="heading"
           lineHeight="1.6"
           textAlign="justify"
-          color="gray.300"
+          color="gray.400"
         >
           <Biography />
         </Text>
@@ -158,6 +162,7 @@ const biografia = [
           />
         </div>
         <DataTable
+          className="striped"
           columns={columns}
           data={tecno}
           pagination
@@ -165,6 +170,104 @@ const biografia = [
           paginationComponentOptions={paginationOptions}
           customStyles={customStyles}
         />
+      </Box>
+      <Box className="proyectos">
+        <Text
+          fontSize="30px"
+          fontWeight="bold"
+          marginLeft="1rem"
+          color="#2B6388"
+        >
+          Proyectos
+        </Text>
+        <Flex
+          display="flex"
+          justifyContent="center"
+          gap="1rem"
+          flexDirection={{ base: "column", md: "row" }}
+        >
+          <Box
+            position="relative"
+            overflow="hidden"
+            borderRadius="8px"
+            boxShadow="0 4px 8px rgba(0, 0, 0, 0.1)"
+            padding="1rem"
+          >
+            <img src={mangiare} alt="mangiare" />
+            <Text className="descripcion">
+              Mangiar-e es una aplicación que viene a facilitarte la vida! Solo
+              tenes que incluir los ingredientes que tenes a mano y Mangiar-e
+              matchea las recetas disponibles que incluyan dichos ingredientes!
+              También podes filtrar las recetas de acuerdo al tipo de dietas
+              (vegan diet, ovo diet, etc), al precio, al rating y por orden
+              alfabético. Además de esta increíble funcionalidad, podes crear tu
+              propia receta e incluirla en la base de datos de Mangiar-e; de
+              esta forma estarán disponibles para otros usuarios!
+            </Text>
+          </Box>
+
+          <Box
+            position="relative"
+            overflow="hidden"
+            borderRadius="8px"
+            boxShadow="0 4px 8px rgba(0, 0, 0, 0.1)"
+            padding="1rem"
+          >
+            <img src={Paises} alt="paises" />
+            <Text className="descripcion">
+              Proyecto Individual de Henry donde debía implementar una barra
+              buscadora de países; mediante información traída desde una api
+              externa; a su vez, conformar una serie de filtros para la búsqueda
+              de dichos países; una landing page; un paginado, y por último la
+              creación de una actividad turística mediante una ruta post. Las
+              tecnologías utilizadas fueron React, React-Redux, Sequelize,
+              PostgreSQL, Express, CSS.
+            </Text>
+          </Box>
+        </Flex>
+
+        <Flex
+          display="flex"
+          justifyContent="center"
+          gap="1rem"
+          flexDirection={{ base: "column", md: "row" }}
+        >
+          <Box
+            position="relative"
+            overflow="hidden"
+            borderRadius="8px"
+            boxShadow="0 4px 8px rgba(0, 0, 0, 0.1)"
+            padding="1rem"
+          >
+            <img src={Palitos} alt="palitos" />
+            <Text className="descripcion">
+              Con uno de mis mejores amigos y compañero de banco, en la
+              secundaria jugábamos al juego de los palitos; A modo de recuerdo y
+              de aprendizaje, quise recrear en código el juego que tanto nos
+              divertía. El objetivo del juego es que cada participante va
+              sacando la cantidad de palitos que desea en sentido horizontal;
+              mueve uno, mueve otro; al que le queda un palito pierde!
+            </Text>
+          </Box>
+
+          <Box
+            position="relative"
+            overflow="hidden"
+            borderRadius="8px"
+            boxShadow="0 4px 8px rgba(0, 0, 0, 0.1)"
+            padding="1rem"
+          >
+            <img src={ECOMMERCE} alt="" />
+            <Text className="descripcion">
+              Proyecto Personal que busca contemplar una plantilla genérica para
+              distintas empresas o pymes a fin de satisfacer las necesidades del
+              cliente. Tiene integrado logueo de usuario, Carrito de compras con
+              MercadoPago, Panel de administrador, Barra buscadora de comidas,
+              Filtros de comidas por categorías; Posibilidad de pago con
+              MercadoPago y Stripe Credit Card.
+            </Text>
+          </Box>
+        </Flex>
       </Box>
     </Box>
   );

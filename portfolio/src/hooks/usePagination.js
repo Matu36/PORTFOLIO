@@ -31,6 +31,11 @@ export const usePagination = (data) => {
         border: "1px solid var(--bs-gray-400)",
       },
     },
+    rows: {
+      style: {
+        backgroundColor: "rgba(0,0,0,.05)", // Color de fondo para filas impares
+      },
+    },
   };
 
   // Opciones de configuración de paginación
