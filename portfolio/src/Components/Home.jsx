@@ -3,13 +3,13 @@ import NavBar from "./NavBar";
 import { Text, Box, Button, Image, Flex } from "@chakra-ui/react";
 import { Icon, Link } from "@chakra-ui/react";
 import { FaGithub, FaGlobe, FaLinkedin, FaEnvelope } from "react-icons/fa";
-import mangiare from "../img/mangiare.png";
 import matu from "../img/mpichu.jpg";
-import ECOMMERCE from "../img/buenProvechoNuevo.png";
-import Carrousel from "../Components/Styles/Carrousel";
 import SideBar from "./SideBar";
 import { toast } from "react-toastify";
 import personal from "../img/POSTMAN.png";
+import DataTable from "react-data-table-component";
+import { tecnologias } from "../Utils/tecnologias";
+import { usePagination } from "../hooks/usePagination";
 
 export default function Home() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -38,7 +38,7 @@ const biografia = [
     Título: "Inicio en el Desarrollo Web",
     Descripción:
       "Actualmente me desempeño en el área del desarrollo web, tanto Backend como Frontend. Inicié mi carrera en este emocionante campo con un fuerte interés en construir soluciones tecnológicas.",
-    Año: 2022, // Reemplaza con el año correspondiente
+    Año: 2022
   },
   {
     Título: "Pasión por el Trabajo en Equipo",
@@ -61,6 +61,41 @@ const biografia = [
     );
   };
 
+  //Paginado y searchbar  //
+  const [search, setSearch] = useState("");
+  const [tecno, setTecno] = useState([]);
+
+  const tecnologia = tecnologias;
+
+  const { paginationOptions, customStyles } = usePagination(tecnologia);
+
+  useEffect(() => {
+    filterByTecno(search);
+  }, [search]);
+
+  const handleOnChange = (e) => {
+    e.preventDefault();
+    setSearch(e.target.value);
+  };
+
+  const filterByTecno = (value) => {
+    if (!value) {
+      setTecno(tecnologia);
+    } else {
+      const arrayCache = tecnologia.filter((tecno) =>
+        tecno.nombre.toLowerCase().includes(value.toLowerCase())
+      );
+      setTecno(arrayCache);
+    }
+  };
+
+  const columns = [
+    { name: "ID", selector: (row) => row.id, sortable: true },
+    { name: "TIPO", selector: (row) => row.tipo, sortable: true },
+    { name: "NOMBRE", selector: (row) => row.nombre, sortable: true },
+    { name: "LENGUAJE", selector: (row) => row.lenguaje, sortable: true },
+  ];
+
   return (
     <Box>
       <NavBar onToggleSidebar={toggleSidebar} />
@@ -73,7 +108,6 @@ const biografia = [
 
         <Box marginTop="15rem">
           <Text fontSize="50px" fontWeight="bold">
-            {" "}
             Matías Pineda
           </Text>
           <Text fontSize="30px" color="yellow.400" fontWeight="bold">
@@ -93,9 +127,44 @@ const biografia = [
         </Text>
         <img src={personal} alt="personal" />
 
-        <Text>
+        <Text
+          fontSize="18px"
+          fontFamily="heading"
+          lineHeight="1.6"
+          textAlign="justify"
+          color="gray.300"
+        >
           <Biography />
         </Text>
+      </Box>
+      <Box className="tecnologias">
+        <Text
+          fontSize="30px"
+          fontWeight="bold"
+          marginLeft="1rem"
+          color="#2B6388"
+        >
+          Tecnologías que uso
+        </Text>
+
+        <div className="input-group mb-3 inputSearch">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Buscar por NOMBRE"
+            onChange={handleOnChange}
+            value={search}
+            autoComplete="off"
+          />
+        </div>
+        <DataTable
+          columns={columns}
+          data={tecno}
+          pagination
+          striped
+          paginationComponentOptions={paginationOptions}
+          customStyles={customStyles}
+        />
       </Box>
     </Box>
   );

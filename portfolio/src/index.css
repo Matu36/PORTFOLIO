@@ -41,7 +41,7 @@ code {
 
 @keyframes slideIn {
   0% {
-    left: -100%; /* Comienza fuera del carrusel en el lado derecho */
+    left: -100%; 
   }
   100% {
     left: 100%; 
@@ -99,6 +99,15 @@ code {
     border-radius: 1%;
     box-shadow: deepskyblue;
   }
+
+  .tecnologias {
+    width: 70%;
+    margin-left: 17rem;
+    border-radius: 2%;
+    padding-top: 20px;
+  }
+
+ 
 
   
   
