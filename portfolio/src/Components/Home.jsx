@@ -1,251 +1,286 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import NavBar from "./NavBar";
-import { Text, Box, Button, Image, Flex } from "@chakra-ui/react";
-import CV from "../Utils/CV.ACTUALIZADO.pdf";
-import countries from "../img/PAISESNUEVO.png";
-import palitos from "../img/Palitos.jpg";
+import { Text, Box, Flex } from "@chakra-ui/react";
 import { Icon, Link } from "@chakra-ui/react";
 import { FaGithub, FaGlobe, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import matu from "../img/mpichu.jpg";
+import SideBar from "./SideBar";
+import { toast } from "react-toastify";
+import personal from "../img/POSTMAN.png";
+import DataTable from "react-data-table-component";
+import { tecnologias } from "../Utils/tecnologias";
+import { usePagination } from "../hooks/usePagination";
+import ECOMMERCE from "../img/ECOMMERCE.jpg";
+import Palitos from "../img/palos.png";
+import Paises from "../img/PAISESNUEVO.png";
 import mangiare from "../img/mangiare.png";
-import matu from "../img/Matu.png";
-import ECOMMERCE from "../img/buenProvechoNuevo.png";
-import Carrousel from "../Components/Styles/Carrousel";
 
 export default function Home() {
-  return (
-    <Box>
-      <NavBar />
-      <br />
-      <br />
-      <Box
-        id="inicio"
-        display="flex"
-        flexDirection="column"
-        alignItems="center"
-        justifyContent="center"
-        textAlign="center"
-        margin="30px"
-      >
-        <Text
-          marginTop={{ base: "30px", md: "0" }}
-          fontSize={{ base: "50px", md: "70px" }}
-          fontWeight="extrabold"
-        >
-          Matías Pineda
-        </Text>
-        <Text
-          fontSize={{ base: "50px", md: "70px" }}
-          fontWeight="extrabold"
-          color="yellow.400"
-          style={{
-            "@media screen and (max-width: 768px)": {
-              fontSize: "20px",
-              width: "150%",
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
 
-              justifyContent: "center",
-              marginLeft: "10px",
-            },
-            maxWidth: "100%",
-          }}
-        >
-          Soy un Desarrollador Full Stack
-        </Text>
-        <br />
-        <br />
-        <Box maxWidth="1000px">
+  const toggleSidebar = () => {
+    setSidebarOpen(!isSidebarOpen);
+  };
+
+  useEffect(() => {
+    toast.info("Bienvenido a mi Porfolio!", {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      newestOnTop: false,
+      closeOnClick: true,
+      rtl: false,
+      draggable: true,
+      pauseOnHover: true,
+      pauseOnFocusLoss: true,
+    });
+  }, []);
+
+  const biografia = `
+const biografia = [
+  {
+    Título: "Inicio en el Desarrollo Web",
+    Descripción:
+      "Actualmente me desempeño en el área del desarrollo web, tanto Backend como Frontend. Inicié mi carrera en este emocionante campo con un fuerte interés en construir soluciones tecnológicas.",
+    Año: 2022
+  },
+  {
+    Título: "Pasión por el Trabajo en Equipo",
+    Descripción:
+      "Me apasiona el trabajo en equipo, donde todos compartimos un mismo objetivo y nos desempeñamos arduamente en pos de conseguirlo. Creo firmemente en la colaboración y la sinergia para lograr resultados excepcionales.",
+  },
+  {
+    Título: "Explorando Nuevas Tecnologías",
+    Descripción:
+      "El mundo de la programación es increíble; nada me divierte más que seguir aprendiendo tecnologías nuevas e implementarlas con el fin de alcanzar mis metas. Siempre estoy en busca de desafíos y oportunidades para mejorar mis habilidades.",
+  },
+];
+`;
+
+  const Biography = () => {
+    return (
+      <Box>
+        <Text whiteSpace="pre-wrap">{biografia}</Text>
+      </Box>
+    );
+  };
+
+  //Paginado y searchbar  //
+  const [search, setSearch] = useState("");
+  const [tecno, setTecno] = useState([]);
+
+  const tecnologia = tecnologias;
+
+  const { paginationOptions, customStyles } = usePagination(tecnologia);
+
+  useEffect(() => {
+    filterByTecno(search);
+  }, [search]);
+
+  const handleOnChange = (e) => {
+    e.preventDefault();
+    setSearch(e.target.value);
+  };
+
+  const filterByTecno = (value) => {
+    if (!value) {
+      setTecno(tecnologia);
+    } else {
+      const arrayCache = tecnologia.filter((tecno) =>
+        tecno.nombre.toLowerCase().includes(value.toLowerCase())
+      );
+      setTecno(arrayCache);
+    }
+  };
+
+  const columns = [
+    { name: "ID", selector: (row) => row.id, sortable: true },
+    { name: "TIPO", selector: (row) => row.tipo, sortable: true },
+    { name: "NOMBRE", selector: (row) => row.nombre, sortable: true },
+    { name: "LENGUAJE", selector: (row) => row.lenguaje, sortable: true },
+  ];
+
+  return (
+    <Box id="inicio">
+      <NavBar onToggleSidebar={toggleSidebar} />
+      {isSidebarOpen ? (
+        <SideBar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+      ) : (
+        <>
           <Text
-            margin="left"
-            fontSize="20px"
-            fontWeight="bold"
-            textAlign="justify"
+            fontSize="9rem"
+            position="fixed"
+            marginTop="6rem"
+            marginLeft="5rem"
+            opacity="0.1"
           >
-            Actualemente me desempeño en el área del desarrollo Web, tanto
-            Backend, como Frontend. Me apasiona el trabajo en equipo, donde
-            todos compartimos un mismo objetivo y nos desempeñamos arduamente en
-            pos de conseguirlo. El mundo de la programación es increíble; nada
-            me divierte más que seguir aprendiendo tecnologías nuevas e
-            implementarlas con el fin de alcanzar mis metas.
+            B
+          </Text>
+          <Text
+            fontSize="9rem"
+            position="fixed"
+            marginTop="14.5rem"
+            opacity="0.1"
+            marginLeft="6rem"
+          >
+            I
+          </Text>
+          <Text
+            fontSize="9rem"
+            position="fixed"
+            marginTop="23rem"
+            opacity="0.1"
+            marginLeft="4rem"
+          >
+            O
+          </Text>
+        </>
+      )}
+      <Flex
+        justifyContent="space-evenly"
+        flexDirection={{ base: "column", md: "row" }}
+      >
+        <Box marginTop={{ base: "-1rem", md: "0" }}>
+          <img src={matu} alt="matu" className="matu" />
+        </Box>
+
+        <Box
+          position="relative"
+          z-index="1"
+          marginTop={{ base: "22rem", md: "15rem" }}
+          textAlign={{ base: "center", md: "left" }}
+          ml={{ base: "0", md: "-40rem" }}
+        >
+          <Text fontSize="50px" fontWeight="bold">
+            Matías Pineda
+          </Text>
+          <Text fontSize="30px" color="yellow.400" fontWeight="bold">
+            Soy un desarrollador Full Stack!
           </Text>
         </Box>
-      </Box>
-      <br />
-      <Flex
-        alignItems="center"
-        textAlign="center"
-        marginLeft="100px"
-        style={{
-          "@media screen and (max-width: 768px)": {
-            flexDirection: "column",
-            alignItems: "center",
-            textAlign: "center",
-          },
-          maxWidth: "100%",
-        }}
-      >
-        <Box>
-          <Image
-            src={matu}
-            borderRadius="md"
-            boxShadow="10px 10px 10px gray"
-            opacity="0.9"
-            marginTop={{ base: "0", md: "0" }}
-            marginLeft={{ base: "-70", md: "0" }}
-          ></Image>
-        </Box>
-        <a href={CV} target="_blank" rel="noopener noreferrer">
-          <Button
-            mt={6}
-            size="lg"
-            colorScheme="yellow"
-            marginTop={{ base: "-100", md: "260px" }}
-            marginLeft={{ base: "-70", md: "0" }}
-          >
-            <Text
-              fontSize="25px"
-              fontFamily="sans-serif"
-              fontWeight="bold"
-              style={{
-                "@media screen and (max-width: 768px)": {
-                  marginTop: "0",
-                  justifyContent: "center",
-                  marginLeft: "0px",
-                },
-                maxWidth: "100%",
-              }}
-            >
-              Ver mi CV{" "}
-            </Text>
-          </Button>
-        </a>
       </Flex>
 
-      <br />
-      <br />
-      <br />
-      <Box id="sobre-mi">
-        <Text
-          fontSize="50px"
-          marginLeft={{ base: 5, md: "50px" }}
-          fontWeight="bold"
-          textDecoration="underline"
-          textDecorationColor="cyan.700"
-        >
-          Sobre mi
-        </Text>
-        <br />
-        <Text
-          marginLeft={{ base: 5, md: "50px" }}
-          textAlign="justify"
-          maxWidth="1000px"
-          fontWeight="bold"
-          fontSize={{ base: "16px", md: "18px" }}
-          w={{ base: "100%", md: "auto" }}
-          width={{ base: "90%", md: "auto" }}
-        >
-          Les cuento un poco de mi! Desde los 18 años hasta los 23 estudie el
-          profesorado de Educación Física en la Universidad Nacional de La
-          Plata; Al recibirme comencé a trabajar en el área de Educación; Nunca
-          me convenció mi trabajo, aunque igualmente seguía perfeccionandomé
-          (con cursos, capacitaciones y posgrados) ya que era mi
-          responsabilidad. Posteriormente, y en conjunto con Educación Física me
-          recibí de Productor de Seguros (lo heredé de mi papá). Hace más de 10
-          años que trabajo en ambas áreas. Más alla de mi trabajo, siempre dio
-          vueltas en mi cabeza el hecho de ser Programador IT. Para mi no es un
-          medio, sino que es el fin en si mismo. Me divierte. Y es la principal
-          razón por la cual decidí sumergirme en este mundo apasionante.
-          Mantente hambriento, mantente alocado! Ser programador es prolongar la
-          infancia! :)
-        </Text>
-      </Box>
-      <br />
-      <br />
-      <br />
-
-      <Box id="Habilidades">
-        <Text
-          fontSize="50px"
-          marginLeft={{ base: 5, md: "50px" }}
-          fontWeight="bold"
-          textDecoration="underline"
-          textDecorationColor="cyan.700"
-        >
-          Habilidades
-        </Text>
-        <Text
-          fontSize="22px"
-          fontWeight="bold"
-          color="yellow.300"
-          marginLeft={{ base: 5, md: "50px" }}
-        >
-          Estas son las tecnologías con las que he trabajado
-        </Text>
-        <br />
-        <br />
-
-        <Carrousel />
-        <br />
-        <br />
-      </Box>
-      <Box id="Proyectos">
-        <Text
-          fontSize="50px"
-          marginLeft={{ base: 5, md: "50px" }}
-          fontWeight="bold"
-          textDecoration="underline"
-          textDecorationColor="cyan.700"
-        >
-          Proyectos
-        </Text>
-        <Text
-          fontSize="22px"
-          fontWeight="bold"
-          color="yellow.300"
-          marginLeft={{ base: 5, md: "50px" }}
-        >
-          Mis proyectos más recientes
-        </Text>
-        <br />
-        <br />
+      <Box className="personal" id="personal">
         <Text
           fontSize="30px"
           fontWeight="bold"
-          marginLeft={{ base: 5, md: "50px" }}
+          marginLeft="1rem"
+          color="#2B6388"
         >
-          Aplicación de Países
+          Mis Datos Personales
         </Text>
-        <br />
-        <Flex flexDirection={{ base: "column", md: "row" }}>
+        <img src={personal} alt="personal" />
+
+        <Text
+          fontSize="18px"
+          fontFamily="heading"
+          lineHeight="1.6"
+          textAlign="justify"
+          color="gray.400"
+        >
+          <Biography />
+        </Text>
+      </Box>
+      <Box className="tecnologias" id="tecnologias">
+        <Text
+          fontSize="30px"
+          fontWeight="bold"
+          marginLeft="1rem"
+          color="#2B6388"
+        >
+          Tecnologías que uso
+        </Text>
+
+        <div className="input-group mb-3 inputSearch">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Buscar por NOMBRE"
+            onChange={handleOnChange}
+            value={search}
+            autoComplete="off"
+          />
+        </div>
+        <DataTable
+          className="striped"
+          columns={columns}
+          data={tecno}
+          pagination
+          striped
+          paginationComponentOptions={paginationOptions}
+          customStyles={customStyles}
+        />
+      </Box>
+      <br />
+      <Box className="proyectos" id="proyectos">
+        <Text
+          fontSize="30px"
+          fontWeight="bold"
+          marginLeft="1rem"
+          color="#2B6388"
+        >
+          Proyectos
+        </Text>
+        <Flex
+          display="flex"
+          justifyContent="center"
+          gap="1rem"
+          flexDirection={{ base: "column", md: "row" }}
+          marginTop="-1rem"
+        >
           <Box
-            marginLeft={{ base: 5, md: "50px" }}
-            marginRight="20px"
-            width={{ base: "100%", md: "800px" }}
-            height={{ base: "80%", md: "400px" }}
-            borderWidth="10px"
-            borderRadius="2g"
+            position="relative"
             overflow="hidden"
-            boxShadow="lg"
-            transition="all 0.2s ease-in-out"
-            _hover={{
-              transform: "scale(1.05)",
-              boxShadow: "xl",
-            }}
+            borderRadius="8px"
+            boxShadow="0 4px 8px rgba(0, 0, 0, 0.1)"
+            padding="1rem"
           >
-            <Image
-              src={countries}
-              alt="Card image"
-              width="100%"
-              height="100%"
-              objectFit="cover"
-            />
+            <img src={mangiare} alt="mangiare" />
+            <Text className="descripcion">
+              Mangiar-e es una aplicación que viene a facilitarte la vida! Solo
+              tenes que incluir los ingredientes que tenes a mano y Mangiar-e
+              matchea las recetas disponibles que incluyan dichos ingredientes!
+              También podes filtrar las recetas de acuerdo al tipo de dietas
+              (vegan diet, ovo diet, etc), al precio, al rating y por orden
+              alfabético. Además de esta increíble funcionalidad, podes crear tu
+              propia receta e incluirla en la base de datos de Mangiar-e; de
+              esta forma estarán disponibles para otros usuarios!
+            </Text>
+            <Box marginTop="1rem">
+              <Link
+                href="https://github.com/Matu36/MANGIARE"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon
+                  as={FaGithub}
+                  size="lg"
+                  style={{ margin: "0 10px", fontSize: "30px" }}
+                />
+              </Link>
+              <Link
+                href="https://mangiare.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon
+                  as={FaGlobe}
+                  size="lg"
+                  style={{ margin: "0 10px", fontSize: "30px" }}
+                />
+              </Link>
+            </Box>
           </Box>
-          <Box width={{ base: "100%", md: "25%" }}>
-            <Text
-              marginLeft={{ base: 7, md: "0" }}
-              fontSize="17px"
-              fontWeight="bold"
-              fontFamily="sans-serif"
-              textAlign="justify"
-            >
+
+          <Box
+            position="relative"
+            overflow="hidden"
+            borderRadius="8px"
+            boxShadow="0 4px 8px rgba(0, 0, 0, 0.1)"
+            padding="1rem"
+          >
+            <img src={Paises} alt="paises" />
+            <Text className="descripcion">
               Proyecto Individual de Henry donde debía implementar una barra
               buscadora de países; mediante información traída desde una api
               externa; a su vez, conformar una serie de filtros para la búsqueda
@@ -254,316 +289,131 @@ export default function Home() {
               tecnologías utilizadas fueron React, React-Redux, Sequelize,
               PostgreSQL, Express, CSS.
             </Text>
+            <Box marginTop="1rem">
+              <Link
+                href="https://github.com/Matu36/PI-Countries-mainACTUALIZADO"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon
+                  as={FaGithub}
+                  size="lg"
+                  style={{ margin: "0 10px", fontSize: "30px" }}
+                />
+              </Link>
+              <Link href=" https://fronttpais.onrender.com/">
+                <Icon
+                  as={FaGlobe}
+                  size="lg"
+                  style={{ margin: "0 10px", fontSize: "30px" }}
+                />
+              </Link>
+            </Box>
           </Box>
         </Flex>
+
+        <Flex
+          display="flex"
+          justifyContent="center"
+          gap="1rem"
+          flexDirection={{ base: "column", md: "row" }}
+        >
+          <Box
+            position="relative"
+            overflow="hidden"
+            borderRadius="8px"
+            boxShadow="0 4px 8px rgba(0, 0, 0, 0.1)"
+            padding="1rem"
+          >
+            <img src={Palitos} alt="palitos" />
+            <Text className="descripcion">
+              Con uno de mis mejores amigos y compañero de banco, en la
+              secundaria jugábamos al juego de los palitos; A modo de recuerdo y
+              de aprendizaje, quise recrear en código el juego que tanto nos
+              divertía. El objetivo del juego es que cada participante va
+              sacando la cantidad de palitos que desea en sentido horizontal;
+              mueve uno, mueve otro; al que le queda un palito pierde!
+            </Text>
+            <Box marginTop="1rem">
+              <Link href="https://matu36.github.io/PalosHTML/">
+                <Icon
+                  as={FaGlobe}
+                  size="lg"
+                  style={{ margin: "0 10px", fontSize: "30px" }}
+                />
+              </Link>
+            </Box>
+          </Box>
+
+          <Box
+            position="relative"
+            overflow="hidden"
+            borderRadius="8px"
+            boxShadow="0 4px 8px rgba(0, 0, 0, 0.1)"
+            padding="1rem"
+          >
+            <img src={ECOMMERCE} alt="" />
+            <Text className="descripcion">
+              E-COMMERCE: Proyecto Personal que busca contemplar una plantilla
+              genérica para distintas empresas o pymes a fin de satisfacer las
+              necesidades del cliente. Tiene integrado logueo de usuario,
+              Carrito de compras con MercadoPago, Panel de administrador, Barra
+              buscadora de comidas, Filtros de comidas por categorías;
+              Posibilidad de pago con MercadoPago y Stripe Credit Card.
+            </Text>
+            <Box marginTop="1rem">
+              <Link
+                href="https://github.com/Matu36/Pymes-Software-Integration"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon
+                  as={FaGithub}
+                  size="lg"
+                  style={{ margin: "0 10px", fontSize: "30px" }}
+                />
+              </Link>
+              <Link href="https://buenprovecho.vercel.app/">
+                <Icon
+                  as={FaGlobe}
+                  size="lg"
+                  style={{ margin: "0 10px", fontSize: "30px" }}
+                />
+              </Link>
+            </Box>
+          </Box>
+        </Flex>
+      </Box>
+      <br />
+      <Box id="contacto" className="contacto">
         <Text
-          fontSize="22px"
+          fontSize="30px"
           fontWeight="bold"
-          color="yellow.300"
-          marginLeft={{ base: 5, md: "50px" }}
-          marginTop="1rem"
-        >
-          React - React - Redux - Node.js - Express.Js - Sequelize - PostgreSQL
-        </Text>
-        <br />
-
-        <Box marginLeft={{ base: 5, md: "50px" }}>
-          <Link
-            href="https://github.com/Matu36/PI-Countries-mainACTUALIZADO"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Icon
-              as={FaGithub}
-              size="lg"
-              style={{ margin: "0 10px", fontSize: "30px" }}
-            />
-          </Link>
-          <Link href=" https://fronttpais.onrender.com/">
-            <Icon
-              as={FaGlobe}
-              size="lg"
-              style={{ margin: "0 10px", fontSize: "30px" }}
-            />
-          </Link>
-        </Box>
-      </Box>
-      <br />
-      <br />
-      <Text
-        fontSize="30px"
-        fontWeight="bold"
-        marginLeft={{ base: 5, md: "50px" }}
-      >
-        Aplicación de Comida
-      </Text>
-      <br />
-      <Flex flexDirection={{ base: "column", md: "row" }}>
-        <Box
-          marginLeft={{ base: 5, md: "50px" }}
-          marginRight="20px"
-          width={{ base: "100%", md: "800px" }}
-          height={{ base: "80%", md: "400px" }}
-          borderWidth="10px"
-          borderRadius="2g"
-          overflow="hidden"
-          boxShadow="lg"
-          transition="all 0.2s ease-in-out"
-          _hover={{
-            transform: "scale(1.05)",
-            boxShadow: "xl",
-          }}
-        >
-          <Image
-            src={mangiare}
-            alt="Card image"
-            width="100%"
-            height="100%"
-            objectFit="cover"
-          />
-        </Box>
-        <Box width={{ base: "100%", md: "25%" }}>
-          <Text
-            marginLeft={{ base: 7, md: "0" }}
-            fontSize="17px"
-            fontWeight="bold"
-            fontFamily="sans-serif"
-            textAlign="justify"
-          >
-            Mangiar-e es una aplicación que viene a facilitarte la vida! Solo
-            tenes que incluir los ingredientes que tenes a mano y Mangiar-e
-            matchea las recetas disponibles que incluyan dichos ingredientes!
-            También podes filtrar las recetas de acuerdo al tipo de dietas
-            (vegan diet, ovo diet, etc), al precio, al rating y por orden
-            alfabético. Además de esta increíble funcionalidad, podes crear tu
-            propia receta e incluirla en la base de datos de Mangiar-e; de esta
-            forma estarán disponibles para otros usuarios!
-          </Text>
-        </Box>
-      </Flex>
-      <Text
-        fontSize="22px"
-        fontWeight="bold"
-        color="yellow.300"
-        marginLeft={{ base: 5, md: "50px" }}
-        marginTop="1rem"
-      >
-        React - React - Redux - Node.js - Express.Js - Sequelize - PostgreSQL-
-        Chakra UI
-      </Text>
-      <br />
-
-      <Box marginLeft={{ base: 5, md: "50px" }}>
-        <Link
-          href="https://github.com/Matu36/MANGIARE"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Icon
-            as={FaGithub}
-            size="lg"
-            style={{ margin: "0 10px", fontSize: "30px" }}
-          />
-        </Link>
-        <Link
-          href="https://mangiare.vercel.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Icon
-            as={FaGlobe}
-            size="lg"
-            style={{ margin: "0 10px", fontSize: "30px" }}
-          />
-        </Link>
-      </Box>
-      <br />
-      <br />
-
-      <Text
-        fontSize="30px"
-        fontWeight="bold"
-        marginLeft={{ base: 5, md: "50px" }}
-      >
-        E-Commerce
-      </Text>
-      <br />
-      <Flex flexDirection={{ base: "column", md: "row" }}>
-        <Box
-          marginLeft={{ base: 5, md: "50px" }}
-          marginRight="20px"
-          width={{ base: "100%", md: "800px" }}
-          height={{ base: "80%", md: "400px" }}
-          borderWidth="10px"
-          borderRadius="2g"
-          overflow="hidden"
-          boxShadow="lg"
-          transition="all 0.2s ease-in-out"
-          _hover={{
-            transform: "scale(1.05)",
-            boxShadow: "xl",
-          }}
-        >
-          <Image
-            src={ECOMMERCE}
-            alt="Card image"
-            width="100%"
-            height="100%"
-            objectFit="cover"
-          />
-        </Box>
-        <Box width={{ base: "100%", md: "25%" }}>
-          <Text
-            marginLeft={{ base: 7, md: "0" }}
-            fontSize="17px"
-            fontWeight="bold"
-            fontFamily="sans-serif"
-            textAlign="justify"
-          >
-            Proyecto Personal que busca contemplar una plantilla genérica para
-            distintas empresas o pymes a fin de satisfacer las necesidades del
-            cliente. Tiene integrado logueo de usuario, Carrito de compras con
-            MercadoPago, Panel de administrador, Barra buscadora de comidas,
-            Filtros de comidas por categorías; Posibilidad de pago con
-            MercadoPago y Stripe Credit Card.
-          </Text>
-        </Box>
-      </Flex>
-      <Text
-        fontSize="22px"
-        fontWeight="bold"
-        color="yellow.300"
-        marginLeft={{ base: 5, md: "50px" }}
-        marginTop="1rem"
-      >
-        React - React - Redux - Node.js - Express.Js - Sequelize - PostgreSQL -
-        Chakra-ui - Lottie Files - Framer Motion - AUTH0 - Stripe
-      </Text>
-      <br />
-
-      <Box marginLeft={{ base: 5, md: "50px" }}>
-        <Link
-          href="https://github.com/Matu36/Pymes-Software-Integration"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Icon
-            as={FaGithub}
-            size="lg"
-            style={{ margin: "0 10px", fontSize: "30px" }}
-          />
-        </Link>
-        <Link href="https://buenprovecho.vercel.app/">
-          <Icon
-            as={FaGlobe}
-            size="lg"
-            style={{ margin: "0 10px", fontSize: "30px" }}
-          />
-        </Link>
-      </Box>
-      <br />
-      <br />
-      <Text
-        fontSize="30px"
-        fontWeight="bold"
-        marginLeft={{ base: 5, md: "50px" }}
-      >
-        Juego de los Palitos
-      </Text>
-      <br />
-      <Flex flexDirection={{ base: "column", md: "row" }}>
-        <Box
-          marginLeft={{ base: 5, md: "50px" }}
-          marginRight="20px"
-          width={{ base: "100%", md: "25%" }}
-          height={{ base: "80%", md: "400px" }}
-          borderWidth="10px"
-          borderRadius="2g"
-          overflow="hidden"
-          boxShadow="lg"
-          transition="all 0.2s ease-in-out"
-          _hover={{
-            transform: "scale(1.05)",
-            boxShadow: "xl",
-          }}
-        >
-          <Image
-            src={palitos}
-            alt="Card image"
-            width="100%"
-            height="100%"
-            objectFit="contain"
-          />
-        </Box>
-        <Box width={{ base: "100%", md: "50%" }}>
-          <Text
-            marginLeft={{ base: 7, md: "0" }}
-            fontSize="17px"
-            fontWeight="bold"
-            fontFamily="sans-serif"
-            textAlign="justify"
-          >
-            Con uno de mis mejores amigos y compañero de banco, en la secundaria
-            jugábamos al juego de los palitos; A modo de recuerdo y de
-            aprendizaje, quise recrear en código el juego que tanto nos
-            divertía. El objetivo del juego es que cada participante va sacando
-            la cantidad de palitos que desea en sentido horizontal; mueve uno,
-            mueve otro; al que le queda un palito pierde!
-          </Text>
-        </Box>
-      </Flex>
-      <Text
-        fontSize="22px"
-        fontWeight="bold"
-        color="yellow.300"
-        marginLeft={{ base: 5, md: "50px" }}
-        marginTop="1rem"
-      >
-        HTML - CSS
-      </Text>
-      <br />
-
-      <Box marginLeft={{ base: 5, md: "50px" }}>
-        <Link href="https://matu36.github.io/PalosHTML/">
-          <Icon
-            as={FaGlobe}
-            size="lg"
-            style={{ margin: "0 10px", fontSize: "30px" }}
-          />
-        </Link>
-      </Box>
-
-      <br />
-      <br />
-      <Box id="Contacto">
-        <Text
-          fontSize="50px"
-          marginLeft={{ base: 5, md: "50px" }}
-          fontWeight="bold"
-          textDecoration="underline"
-          textDecorationColor="cyan.700"
+          marginLeft="1rem"
+          color="#2B6388"
         >
           Contacto
         </Text>
         <Text
-          fontSize="22px"
+          fontSize="30px"
           fontWeight="bold"
+          marginLeft="1rem"
           color="yellow.300"
-          marginLeft={{ base: 5, md: "50px" }}
         >
           Enviame un mensaje o un correo electrónico
         </Text>
         <br />
-        <br />
-        <Flex marginLeft={{ base: 5, md: "50px" }}>
+
+        <Flex marginLeft={{ base: 5, md: "10px" }}>
           <Box>
             <Link
               href="https://github.com/Matu36"
               target="_blank"
               rel="noopener noreferrer"
+              title="GITHUB"
             >
               <FaGithub
-                size={50}
+                size={30}
                 style={{ margin: "0 10px", fontSize: "30px" }}
               />
             </Link>
@@ -573,9 +423,10 @@ export default function Home() {
               href="https://www.linkedin.com/in/matu-pineda/"
               target="_blank"
               rel="noopener noreferrer"
+              title="Linkedin"
             >
               <FaLinkedin
-                size={50}
+                size={30}
                 style={{ margin: "0 10px", fontSize: "30px" }}
               />
             </Link>
@@ -585,9 +436,10 @@ export default function Home() {
               href="mailto:matipineda85@live.com.ar"
               target="_blank"
               rel="noopener noreferrer"
+              title="Mail"
             >
               <FaEnvelope
-                size={50}
+                size={30}
                 style={{ margin: "0 10px", fontSize: "30px" }}
               />
             </Link>
