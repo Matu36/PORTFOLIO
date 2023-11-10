@@ -28,9 +28,10 @@ code {
   left: 100%; 
   top: 0;
   padding: 1rem;
-  animation: slideIn 10s linear infinite;
+  animation: slideIn 20s linear infinite;
   border-radius: 20%;
   margin-top: 1rem; 
+  
   
   
   width: 100%;
@@ -50,10 +51,10 @@ code {
 .sidebar {
   position: fixed;
   left: -250px;
-  top: 150px; /* Ajusta la posición desde arriba según tu preferencia */
+  top: 150px; 
   bottom: 0;
   width: 250px;
-  background-color: #000; /* Mismo color que la navbar */
+  background-color: #000; 
  
   color: white;
   transition: left 0.3s;
@@ -64,9 +65,9 @@ code {
 }
   .sidebar h5 {
 
-  padding: 2rem; 
+  padding: 1.7rem; 
   margin-left: 2rem;
-   margin:auto;
+  margin:auto;
    
   }
 
@@ -85,5 +86,21 @@ code {
   .dark-mode .matu {
     border-color: #ccc; 
   }
+
+  .personal {
+    width: 70%;
+    margin-left: 17rem;
+    border-radius: 10%;
+    padding-top: 100px;
+  }
+  
+  .personal img {
+    width: 100%; 
+    border-radius: 1%;
+    box-shadow: deepskyblue;
+  }
+
+  
+  
 
 
