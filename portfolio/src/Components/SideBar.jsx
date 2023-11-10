@@ -1,15 +1,35 @@
+import { Button } from "@chakra-ui/button";
 import React from "react";
 
 export default function SideBar({ isOpen }) {
   return (
     <div className={`sidebar ${isOpen ? "open" : ""}`}>
-      <button as="a" href="#inicio">
-        <h5>Inicio </h5>
-      </button>
-      <h5>Personal</h5>
-      <h5>Proyectos</h5>
-      <h5>Certificaciones</h5>
-      <h5>Contacto</h5>
+      <div>
+        <Button as="a" href="#inicio" marginTop="1rem" width="100%">
+          <h5>Inicio </h5>
+        </Button>
+      </div>
+      <div>
+        <Button as="a" href="#personal" marginTop="2rem" width="100%">
+          <h5>Personal</h5>
+        </Button>
+      </div>
+      <div>
+        <Button marginTop="2rem" as="a" href="#tecnologias" width="100%">
+          <h5>Tecnologías</h5>
+        </Button>
+      </div>
+      <div>
+        <Button marginTop="2rem" as="a" href="#proyectos" width="100%">
+          <h5>Proyectos</h5>
+        </Button>
+      </div>
+
+      <div>
+        <Button marginTop="2rem" as="a" href="#contacto" width="100%">
+          <h5>Contacto</h5>
+        </Button>
+      </div>
     </div>
   );
 }

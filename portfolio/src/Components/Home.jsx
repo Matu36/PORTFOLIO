@@ -101,7 +101,7 @@ const biografia = [
   ];
 
   return (
-    <Box>
+    <Box id="inicio">
       <NavBar onToggleSidebar={toggleSidebar} />
       <SideBar isOpen={isSidebarOpen} />
 
@@ -110,7 +110,7 @@ const biografia = [
           <img src={matu} alt="matu" className="matu" />
         </Box>
 
-        <Box marginTop="15rem" id="inicio">
+        <Box marginTop="15rem">
           <Text fontSize="50px" fontWeight="bold">
             Matías Pineda
           </Text>
@@ -120,7 +120,7 @@ const biografia = [
         </Box>
       </Flex>
 
-      <Box className="personal">
+      <Box className="personal" id="personal">
         <Text
           fontSize="30px"
           fontWeight="bold"
@@ -141,7 +141,7 @@ const biografia = [
           <Biography />
         </Text>
       </Box>
-      <Box className="tecnologias">
+      <Box className="tecnologias" id="tecnologias">
         <Text
           fontSize="30px"
           fontWeight="bold"
@@ -171,7 +171,7 @@ const biografia = [
           customStyles={customStyles}
         />
       </Box>
-      <Box className="proyectos">
+      <Box className="proyectos" id="proyectos">
         <Text
           fontSize="30px"
           fontWeight="bold"
