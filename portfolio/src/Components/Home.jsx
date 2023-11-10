@@ -7,7 +7,7 @@ import palitos from "../img/Palitos.jpg";
 import { Icon, Link } from "@chakra-ui/react";
 import { FaGithub, FaGlobe, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import mangiare from "../img/mangiare.png";
-import matu from "../img/Matu.png";
+import matu from "../img/mpichu.jpg";
 import ECOMMERCE from "../img/buenProvechoNuevo.png";
 import Carrousel from "../Components/Styles/Carrousel";
 import SideBar from "./SideBar";
@@ -21,7 +21,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    toast.info("Gracias por pasar, Enjoy!", {
+    toast.info("Bienvenido a mi Porfolio!", {
       position: "bottom-right",
       autoClose: 3000,
       hideProgressBar: false,
@@ -38,6 +38,9 @@ export default function Home() {
     <Box>
       <NavBar onToggleSidebar={toggleSidebar} />
       <SideBar isOpen={isSidebarOpen} />
+      <Box>
+        <img src={matu} alt="matu" className="matu" />
+      </Box>
     </Box>
   );
 }
