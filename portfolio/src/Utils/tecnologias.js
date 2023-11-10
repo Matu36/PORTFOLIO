@@ -1,14 +1,14 @@
 export const tecnologias = [
   {
     id: 1,
-    tipo: "base de datos",
+    tipo: "Base de datos",
     nombre: "Oracle",
     lenguaje: "sql",
   },
 
   {
     id: 2,
-    tipo: "base de datos",
+    tipo: "Base de datos",
     nombre: "postgres",
     lenguaje: "sql",
   },

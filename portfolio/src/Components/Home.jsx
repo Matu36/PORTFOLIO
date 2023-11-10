@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "./NavBar";
-import { Text, Box, Button, Image, Flex } from "@chakra-ui/react";
+import { Text, Box, Flex } from "@chakra-ui/react";
 import { Icon, Link } from "@chakra-ui/react";
 import { FaGithub, FaGlobe, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import matu from "../img/mpichu.jpg";
@@ -103,14 +103,54 @@ const biografia = [
   return (
     <Box id="inicio">
       <NavBar onToggleSidebar={toggleSidebar} />
-      <SideBar isOpen={isSidebarOpen} />
-
-      <Flex justifyContent="space-evenly" marginLeft="-40rem">
-        <Box>
+      {isSidebarOpen ? (
+        <SideBar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+      ) : (
+        <>
+          <Text
+            fontSize="9rem"
+            position="fixed"
+            marginTop="6rem"
+            marginLeft="5rem"
+            opacity="0.1"
+          >
+            B
+          </Text>
+          <Text
+            fontSize="9rem"
+            position="fixed"
+            marginTop="14.5rem"
+            opacity="0.1"
+            marginLeft="6rem"
+          >
+            I
+          </Text>
+          <Text
+            fontSize="9rem"
+            position="fixed"
+            marginTop="23rem"
+            opacity="0.1"
+            marginLeft="4rem"
+          >
+            O
+          </Text>
+        </>
+      )}
+      <Flex
+        justifyContent="space-evenly"
+        flexDirection={{ base: "column", md: "row" }}
+      >
+        <Box marginTop={{ base: "-1rem", md: "0" }}>
           <img src={matu} alt="matu" className="matu" />
         </Box>
 
-        <Box marginTop="15rem">
+        <Box
+          position="relative"
+          z-index="1"
+          marginTop={{ base: "22rem", md: "15rem" }}
+          textAlign={{ base: "center", md: "left" }}
+          ml={{ base: "0", md: "-40rem" }}
+        >
           <Text fontSize="50px" fontWeight="bold">
             Matías Pineda
           </Text>
@@ -171,6 +211,7 @@ const biografia = [
           customStyles={customStyles}
         />
       </Box>
+      <br />
       <Box className="proyectos" id="proyectos">
         <Text
           fontSize="30px"
@@ -185,6 +226,7 @@ const biografia = [
           justifyContent="center"
           gap="1rem"
           flexDirection={{ base: "column", md: "row" }}
+          marginTop="-1rem"
         >
           <Box
             position="relative"
@@ -341,6 +383,70 @@ const biografia = [
             </Box>
           </Box>
         </Flex>
+      </Box>
+      <br />
+      <Box id="contacto" className="contacto">
+        <Text
+          fontSize="30px"
+          fontWeight="bold"
+          marginLeft="1rem"
+          color="#2B6388"
+        >
+          Contacto
+        </Text>
+        <Text
+          fontSize="30px"
+          fontWeight="bold"
+          marginLeft="1rem"
+          color="yellow.300"
+        >
+          Enviame un mensaje o un correo electrónico
+        </Text>
+        <br />
+
+        <Flex marginLeft={{ base: 5, md: "10px" }}>
+          <Box>
+            <Link
+              href="https://github.com/Matu36"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="GITHUB"
+            >
+              <FaGithub
+                size={30}
+                style={{ margin: "0 10px", fontSize: "30px" }}
+              />
+            </Link>
+          </Box>
+          <Box>
+            <Link
+              href="https://www.linkedin.com/in/matu-pineda/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Linkedin"
+            >
+              <FaLinkedin
+                size={30}
+                style={{ margin: "0 10px", fontSize: "30px" }}
+              />
+            </Link>
+          </Box>
+          <Box>
+            <Link
+              href="mailto:matipineda85@live.com.ar"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Mail"
+            >
+              <FaEnvelope
+                size={30}
+                style={{ margin: "0 10px", fontSize: "30px" }}
+              />
+            </Link>
+          </Box>
+        </Flex>
+        <br />
+        <br />
       </Box>
     </Box>
   );

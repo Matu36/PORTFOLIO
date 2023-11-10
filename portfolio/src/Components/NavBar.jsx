@@ -39,33 +39,45 @@ export default function NavBar({ onToggleSidebar }) {
           </button>
         </div>
 
-        <div className="custom-carousel">
+        <Box
+          className="custom-carousel"
+          display={{ base: "none", md: "block" }}
+        >
           <img src={bootstrap} alt="Imagen 1" />
-        </div>
+        </Box>
 
-        <div className="custom-carousel">
+        <Box
+          className="custom-carousel"
+          display={{ base: "none", md: "block" }}
+        >
           <img src={express} alt="Imagen 2" />
-        </div>
+        </Box>
 
-        <div className="custom-carousel">
+        <Box
+          className="custom-carousel"
+          display={{ base: "none", md: "block" }}
+        >
           <img src={git} alt="Imagen 6" />
-        </div>
+        </Box>
 
-        <div className="custom-carousel">
+        <Box className="custom-carousel">
           <img src={rt} alt="Imagen 9" />
-        </div>
-        <div className="custom-carousel">
+        </Box>
+        <Box className="custom-carousel">
           <img src={symfony} alt="Imagen 10" />
-        </div>
-        <div className="custom-carousel">
+        </Box>
+        <Box
+          className="custom-carousel"
+          display={{ base: "none", md: "block" }}
+        >
           <img src={pg} alt="Imagen 11" />
-        </div>
-        <div className="custom-carousel">
+        </Box>
+        <Box className="custom-carousel">
           <img src={php} alt="Imagen 12" />
-        </div>
-        <div className="custom-carousel">
+        </Box>
+        <Box className="custom-carousel">
           <img src={js} alt="Imagen 5" />
-        </div>
+        </Box>
       </Flex>
     </Box>
   );
