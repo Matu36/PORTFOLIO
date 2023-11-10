@@ -110,7 +110,7 @@ const biografia = [
           <img src={matu} alt="matu" className="matu" />
         </Box>
 
-        <Box marginTop="15rem">
+        <Box marginTop="15rem" id="inicio">
           <Text fontSize="50px" fontWeight="bold">
             Matías Pineda
           </Text>
@@ -204,6 +204,30 @@ const biografia = [
               propia receta e incluirla en la base de datos de Mangiar-e; de
               esta forma estarán disponibles para otros usuarios!
             </Text>
+            <Box marginTop="1rem">
+              <Link
+                href="https://github.com/Matu36/MANGIARE"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon
+                  as={FaGithub}
+                  size="lg"
+                  style={{ margin: "0 10px", fontSize: "30px" }}
+                />
+              </Link>
+              <Link
+                href="https://mangiare.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon
+                  as={FaGlobe}
+                  size="lg"
+                  style={{ margin: "0 10px", fontSize: "30px" }}
+                />
+              </Link>
+            </Box>
           </Box>
 
           <Box
@@ -223,6 +247,26 @@ const biografia = [
               tecnologías utilizadas fueron React, React-Redux, Sequelize,
               PostgreSQL, Express, CSS.
             </Text>
+            <Box marginTop="1rem">
+              <Link
+                href="https://github.com/Matu36/PI-Countries-mainACTUALIZADO"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon
+                  as={FaGithub}
+                  size="lg"
+                  style={{ margin: "0 10px", fontSize: "30px" }}
+                />
+              </Link>
+              <Link href=" https://fronttpais.onrender.com/">
+                <Icon
+                  as={FaGlobe}
+                  size="lg"
+                  style={{ margin: "0 10px", fontSize: "30px" }}
+                />
+              </Link>
+            </Box>
           </Box>
         </Flex>
 
@@ -248,6 +292,15 @@ const biografia = [
               sacando la cantidad de palitos que desea en sentido horizontal;
               mueve uno, mueve otro; al que le queda un palito pierde!
             </Text>
+            <Box marginTop="1rem">
+              <Link href="https://matu36.github.io/PalosHTML/">
+                <Icon
+                  as={FaGlobe}
+                  size="lg"
+                  style={{ margin: "0 10px", fontSize: "30px" }}
+                />
+              </Link>
+            </Box>
           </Box>
 
           <Box
@@ -259,13 +312,33 @@ const biografia = [
           >
             <img src={ECOMMERCE} alt="" />
             <Text className="descripcion">
-              Proyecto Personal que busca contemplar una plantilla genérica para
-              distintas empresas o pymes a fin de satisfacer las necesidades del
-              cliente. Tiene integrado logueo de usuario, Carrito de compras con
-              MercadoPago, Panel de administrador, Barra buscadora de comidas,
-              Filtros de comidas por categorías; Posibilidad de pago con
-              MercadoPago y Stripe Credit Card.
+              E-COMMERCE: Proyecto Personal que busca contemplar una plantilla
+              genérica para distintas empresas o pymes a fin de satisfacer las
+              necesidades del cliente. Tiene integrado logueo de usuario,
+              Carrito de compras con MercadoPago, Panel de administrador, Barra
+              buscadora de comidas, Filtros de comidas por categorías;
+              Posibilidad de pago con MercadoPago y Stripe Credit Card.
             </Text>
+            <Box marginTop="1rem">
+              <Link
+                href="https://github.com/Matu36/Pymes-Software-Integration"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon
+                  as={FaGithub}
+                  size="lg"
+                  style={{ margin: "0 10px", fontSize: "30px" }}
+                />
+              </Link>
+              <Link href="https://buenprovecho.vercel.app/">
+                <Icon
+                  as={FaGlobe}
+                  size="lg"
+                  style={{ margin: "0 10px", fontSize: "30px" }}
+                />
+              </Link>
+            </Box>
           </Box>
         </Flex>
       </Box>
