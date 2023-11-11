@@ -10,7 +10,7 @@ import personal from "../img/POSTMAN.png";
 import DataTable from "react-data-table-component";
 import { tecnologias } from "../Utils/tecnologias";
 import { usePagination } from "../hooks/usePagination";
-import ECOMMERCE from "../img/ECOMMERCE.jpg";
+import ECOMMERCE from "../img/buenProvechoNuevo.png";
 import Palitos from "../img/palos.png";
 import Paises from "../img/PAISESNUEVO.png";
 import mangiare from "../img/mangiare.png";
@@ -25,7 +25,7 @@ export default function Home() {
 
   useEffect(() => {
     toast.info("Bienvenido a mi Portfolio!", {
-      position: "top-right",
+      position: "bottom-right",
       autoClose: 3000,
       hideProgressBar: false,
       newestOnTop: false,
