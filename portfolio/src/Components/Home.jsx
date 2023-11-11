@@ -14,6 +14,7 @@ import ECOMMERCE from "../img/ECOMMERCE.jpg";
 import Palitos from "../img/palos.png";
 import Paises from "../img/PAISESNUEVO.png";
 import mangiare from "../img/mangiare.png";
+import { biografia } from "../Utils/biografia";
 
 export default function Home() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -23,8 +24,8 @@ export default function Home() {
   };
 
   useEffect(() => {
-    toast.info("Bienvenido a mi Porfolio!", {
-      position: "bottom-right",
+    toast.info("Bienvenido a mi Portfolio!", {
+      position: "top-right",
       autoClose: 3000,
       hideProgressBar: false,
       newestOnTop: false,
@@ -33,29 +34,14 @@ export default function Home() {
       draggable: true,
       pauseOnHover: true,
       pauseOnFocusLoss: true,
+      style: {
+        top: 50,
+        transform: "translateY(-50%)",
+        width: "60%",
+        fontWeight: "bold",
+      },
     });
   }, []);
-
-  const biografia = `
-const biografia = [
-  {
-    Título: "Inicio en el Desarrollo Web",
-    Descripción:
-      "Actualmente me desempeño en el área del desarrollo web, tanto Backend como Frontend. Inicié mi carrera en este emocionante campo con un fuerte interés en construir soluciones tecnológicas.",
-    Año: 2022
-  },
-  {
-    Título: "Pasión por el Trabajo en Equipo",
-    Descripción:
-      "Me apasiona el trabajo en equipo, donde todos compartimos un mismo objetivo y nos desempeñamos arduamente en pos de conseguirlo. Creo firmemente en la colaboración y la sinergia para lograr resultados excepcionales.",
-  },
-  {
-    Título: "Explorando Nuevas Tecnologías",
-    Descripción:
-      "El mundo de la programación es increíble; nada me divierte más que seguir aprendiendo tecnologías nuevas e implementarlas con el fin de alcanzar mis metas. Siempre estoy en busca de desafíos y oportunidades para mejorar mis habilidades.",
-  },
-];
-`;
 
   const Biography = () => {
     return (
