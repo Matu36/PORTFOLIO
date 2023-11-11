@@ -25,7 +25,7 @@ export default function Home() {
 
   useEffect(() => {
     toast.info("Bienvenido a mi Portfolio!", {
-      position: "bottom-right",
+      position: "top-right",
       autoClose: 3000,
       hideProgressBar: false,
       newestOnTop: false,
@@ -35,7 +35,8 @@ export default function Home() {
       pauseOnHover: true,
       pauseOnFocusLoss: true,
       style: {
-        top: 50,
+        marginTop: "10rem",
+        marginLeft: "2rem",
         transform: "translateY(-50%)",
         width: "60%",
         fontWeight: "bold",
