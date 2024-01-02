@@ -81,7 +81,6 @@ export default function Home() {
   };
 
   const columns = [
-    { name: "ID", selector: (row) => row.id, sortable: true },
     { name: "TIPO", selector: (row) => row.tipo, sortable: true },
     { name: "NOMBRE", selector: (row) => row.nombre, sortable: true },
     { name: "LENGUAJE", selector: (row) => row.lenguaje, sortable: true },
