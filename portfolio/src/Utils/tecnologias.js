@@ -90,4 +90,23 @@ export const tecnologias = [
     nombre: "Sequelize",
     lenguaje: "Javascript",
   },
+  {
+    id: 16,
+    tipo: "Lenguaje",
+    nombre: "GO",
+    lenguaje: "GOLANG",
+  },
+
+  {
+    id: 17,
+    tipo: "Base de datos",
+    nombre: "mongoDB",
+    lenguaje: "DB",
+  },
+  {
+    id: 18,
+    tipo: "Plataforma de Servicios",
+    nombre: "AMAZON WEB SERVICES",
+    lenguaje: "Lambda, Apigateway, S3, Cloudwatch, Secrets Manager",
+  },
 ];
