@@ -105,8 +105,8 @@ export const tecnologias = [
   },
   {
     id: 18,
-    tipo: "Plataforma de Servicios",
+    tipo: "Servicios",
     nombre: "AMAZON WEB SERVICES",
-    lenguaje: "Lambda, Apigateway, S3, Cloudwatch, Secrets Manager",
+    lenguaje: "Lambda, Apigateway",
   },
 ];
