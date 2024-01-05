@@ -14,6 +14,7 @@ import ECOMMERCE from "../img/buenProvechoNuevo.png";
 import Palitos from "../img/palos.png";
 import Paises from "../img/PAISESNUEVO.png";
 import mangiare from "../img/mangiare.png";
+import ELEGANZA from "../img/ELEGANZA.jpg";
 import { biografia } from "../Utils/biografia";
 
 export default function Home() {
@@ -369,6 +370,45 @@ export default function Home() {
             </Box>
           </Box>
         </Flex>
+
+        <Box
+          position="relative"
+          overflow="hidden"
+          borderRadius="8px"
+          boxShadow="0 4px 8px rgba(0, 0, 0, 0.1)"
+          padding="1rem"
+        >
+          <img src={ELEGANZA} style={{ height: "50%" }} alt="" />
+          <Text className="descripcion">
+            ELEGANZA shirts, es una página estática en la cual prioricé estilos
+            elegantes y sobrios para darle a la marca una impronta
+            personalizada. Tiene funcionalidades de carrito de compras mediante
+            LOCALSTORAGE; absolutamente todo fue compuesto en el front end; Una
+            navbar moderna, priorizando en el navegador imágenes atractivas que
+            llamen la atención del usuario. Todos los estilos fueron compuestos
+            en CSS y la aplicación entera fue desarrollada en REACT.JS.
+          </Text>
+          <Box marginTop="1rem">
+            <Link
+              href="https://github.com/Matu36/ELEGANZA"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon
+                as={FaGithub}
+                size="lg"
+                style={{ margin: "0 10px", fontSize: "30px" }}
+              />
+            </Link>
+            <Link href="https://eleganzashirts.vercel.app/">
+              <Icon
+                as={FaGlobe}
+                size="lg"
+                style={{ margin: "0 10px", fontSize: "30px" }}
+              />
+            </Link>
+          </Box>
+        </Box>
       </Box>
       <br />
       <Box id="contacto" className="contacto">
