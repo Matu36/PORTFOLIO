@@ -106,7 +106,7 @@ export const tecnologias = [
   {
     id: 18,
     tipo: "Servicios",
-    nombre: "AMAZON WEB SERVICES",
+    nombre: "AWS",
     lenguaje: "Lambda, Apigateway",
   },
 ];

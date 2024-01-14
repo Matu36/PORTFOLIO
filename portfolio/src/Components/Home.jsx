@@ -12,7 +12,7 @@ import { tecnologias } from "../Utils/tecnologias";
 import { usePagination } from "../hooks/usePagination";
 import ECOMMERCE from "../img/buenProvechoNuevo.png";
 import Palitos from "../img/palos.png";
-import Paises from "../img/PAISESNUEVO.png";
+import Paises from "../img/PAISES.png";
 import mangiare from "../img/mangiare.png";
 import ELEGANZA from "../img/ELEGANZA.jpg";
 import { biografia } from "../Utils/biografia";
