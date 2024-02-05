@@ -16,6 +16,7 @@ import Paises from "../img/PAISES.png";
 import mangiare from "../img/mangiare.png";
 import ELEGANZA from "../img/ELEGANZA.jpg";
 import { biografia } from "../Utils/biografia";
+import VENICE from "../img/VENICETOTAL.jpg";
 
 export default function Home() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -378,7 +379,8 @@ export default function Home() {
           boxShadow="0 4px 8px rgba(0, 0, 0, 0.1)"
           padding="1rem"
         >
-          <img src={ELEGANZA} style={{ height: "50%" }} alt="" />
+          <img src={ELEGANZA} style={{ height: "50%" }} alt="eleganza" />
+
           <Text className="descripcion">
             ELEGANZA shirts, es una página estática en la cual prioricé estilos
             elegantes y sobrios para darle a la marca una impronta
@@ -401,6 +403,69 @@ export default function Home() {
               />
             </Link>
             <Link href="https://eleganzashirts.vercel.app/">
+              <Icon
+                as={FaGlobe}
+                size="lg"
+                style={{ margin: "0 10px", fontSize: "30px" }}
+              />
+            </Link>
+          </Box>
+        </Box>
+        <Box
+          position="relative"
+          overflow="hidden"
+          borderRadius="8px"
+          boxShadow="0 4px 8px rgba(0, 0, 0, 0.1)"
+          padding="1rem"
+        >
+          <img src={VENICE} style={{ height: "50%" }} alt="" />
+          <Text className="descripcion">
+            VENICE Indumentaria: Descubre la Moda Urbana con Estilo Propio
+            Bienvenido a VENICE Indumentaria, donde la moda urbana cobra vida
+            con un toque auténtico y contemporáneo. En la creación de esta
+            página, utilicé diversas herramientas para ofrecer una experiencia
+            única. Aquí te presento algunas de las características destacadas:
+            Estilos Atractivos en CSS: La página VENICE se destaca por su diseño
+            atractivo y moderno, logrado gracias a estilos cuidadosamente
+            diseñados en CSS. Cada elemento visual refleja la esencia vibrante
+            de la moda urbana. Imágenes Envolventes: Utilicé imágenes
+            cautivadoras para sumergir a los visitantes en la atmósfera de la
+            moda urbana. Cada foto cuenta una historia de estilo, creando una
+            experiencia visual única. Slider de Fotos Dinámico: Implementé un
+            slider de fotos dinámico para destacar las últimas tendencias y
+            productos destacados. La función de desplazamiento permite explorar
+            la diversidad de la colección de manera fluida. Carrito de Compras y
+            Local Storage: Facilité la experiencia de compra con un carrito
+            intuitivo. La integración de local storage garantiza que los
+            productos seleccionados se mantengan, incluso si el usuario cierra
+            la página, ofreciendo conveniencia y personalización. Diseño
+            Totalmente Responsivo: La página VENICE Indumentaria es accesible
+            desde cualquier dispositivo gracias a su diseño totalmente
+            responsivo. Desde computadoras de escritorio hasta dispositivos
+            móviles, la página se adapta sin perder su atractivo visual. Toque
+            Personalizado: Cada detalle, desde la disposición de los productos
+            hasta la elección de colores, fue cuidadosamente seleccionado para
+            ofrecer una experiencia de compra única y personalizada. Con VENICE
+            Indumentaria, la moda urbana se convierte en una experiencia
+            interactiva y estilizada. Este proyecto refleja mi dedicación a
+            crear páginas web impactantes que no solo presentan productos, sino
+            que cuentan historias a través del diseño y la funcionalidad.
+            ¡Explora, descubre y sumérgete en la moda urbana con VENICE
+            Indumentaria!
+          </Text>
+          <Box marginTop="1rem">
+            <Link
+              href="https://github.com/Matu36/VENICE"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon
+                as={FaGithub}
+                size="lg"
+                style={{ margin: "0 10px", fontSize: "30px" }}
+              />
+            </Link>
+            <Link href="https://venice-nine.vercel.app/">
               <Icon
                 as={FaGlobe}
                 size="lg"
