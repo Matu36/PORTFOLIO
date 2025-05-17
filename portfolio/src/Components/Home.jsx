@@ -49,7 +49,9 @@ export default function Home() {
   const Biography = () => {
     return (
       <Box>
-        <Text whiteSpace="pre-wrap">{biografia}</Text>
+        <Text whiteSpace="pre-wrap" color="#2B6388" fontWeight="600">
+          {biografia}
+        </Text>
       </Box>
     );
   };
@@ -98,7 +100,7 @@ export default function Home() {
           <Text
             fontSize="9rem"
             position="fixed"
-            marginTop="6rem"
+            // marginTop="1rem"
             marginLeft="5rem"
             opacity="0.1"
           >
@@ -107,7 +109,7 @@ export default function Home() {
           <Text
             fontSize="9rem"
             position="fixed"
-            marginTop="14.5rem"
+            marginTop="8rem"
             opacity="0.1"
             marginLeft="6rem"
           >
@@ -116,7 +118,7 @@ export default function Home() {
           <Text
             fontSize="9rem"
             position="fixed"
-            marginTop="23rem"
+            marginTop="16rem"
             opacity="0.1"
             marginLeft="4rem"
           >
@@ -128,14 +130,14 @@ export default function Home() {
         justifyContent="space-evenly"
         flexDirection={{ base: "column", md: "row" }}
       >
-        <Box marginTop={{ base: "-1rem", md: "0" }}>
+        <Box marginTop={{ base: "-9rem", md: "-8rem" }}>
           <img src={matu} alt="matu" className="matu" />
         </Box>
 
         <Box
-          position="relative"
+          // position="relative"
           z-index="1"
-          marginTop={{ base: "22rem", md: "15rem" }}
+          marginTop={{ base: "27rem", md: "8rem" }}
           textAlign={{ base: "center", md: "left" }}
           ml={{ base: "0", md: "-40rem" }}
         >

@@ -14,16 +14,11 @@ import php from "../img/PHP.jpg";
 export default function NavBar({ onToggleSidebar }) {
   const textColor = useColorModeValue("gray.800");
 
+  const images = [bootstrap, express, git, rt, symfony, pg, php, js];
+  const allImages = [...images];
+
   return (
-    <Box
-      position="fixed"
-      top="0"
-      left="0"
-      right="0"
-      backgroundColor="#2B6388"
-      color="black"
-      zIndex="999"
-    >
+    <Box backgroundColor="#2B6388" color="black" zIndex="999" overflow="hidden">
       <Flex>
         <div
           className="dark"
@@ -40,43 +35,17 @@ export default function NavBar({ onToggleSidebar }) {
         </div>
 
         <Box
-          className="custom-carousel"
-          display={{ base: "none", md: "block" }}
+          className="carousel-wrapper"
+          position="relative"
+          backgroundColor="#2B6388"
         >
-          <img src={bootstrap} alt="Imagen 1" />
-        </Box>
-
-        <Box
-          className="custom-carousel"
-          display={{ base: "none", md: "block" }}
-        >
-          <img src={express} alt="Imagen 2" />
-        </Box>
-
-        <Box
-          className="custom-carousel"
-          display={{ base: "none", md: "block" }}
-        >
-          <img src={git} alt="Imagen 6" />
-        </Box>
-
-        <Box className="custom-carousel">
-          <img src={rt} alt="Imagen 9" />
-        </Box>
-        <Box className="custom-carousel">
-          <img src={symfony} alt="Imagen 10" />
-        </Box>
-        <Box
-          className="custom-carousel"
-          display={{ base: "none", md: "block" }}
-        >
-          <img src={pg} alt="Imagen 11" />
-        </Box>
-        <Box className="custom-carousel">
-          <img src={php} alt="Imagen 12" />
-        </Box>
-        <Box className="custom-carousel">
-          <img src={js} alt="Imagen 5" />
+          <Box className="carousel-track">
+            {[...images, ...images].map((src, index) => (
+              <Box key={index} className="carousel-image">
+                <img src={src} alt={`Imagen ${index}`} />
+              </Box>
+            ))}
+          </Box>
         </Box>
       </Flex>
     </Box>
