@@ -148,51 +148,66 @@ code {
   }
 
   .proyectos {
-    width: 70%;
-    margin-left: 17rem;
-    border-radius: 2%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
     padding-top: 20px;
+    padding-bottom: 40px;
   }
-
-  @media only screen and (max-width: 950px) {
-    .proyectos {
-      width: 100%; 
-      margin-left: 0rem; 
-    }
+  
+  /* Contenedor de cada card */
+  .proyectos .card {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    max-width: 500px;
+    transition: transform 0.3s ease;
+    text-align: center;
+    height: 700px;
   }
-
+  
+  .proyectos .card:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Imagen de la card */
   .proyectos img {
     width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 300px;
     object-fit: cover;
-    height: 200px;
-    transition: transform 0.3s ease-in-out;
-    padding: 1rem;
+    display: block;
   }
   
-  .proyectos img:hover {
-    transform: scale(1.05);
-    
-  }
-  
+  /* Texto descriptivo */
   .proyectos .descripcion {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    right: 0;
     padding: 1rem;
-    text-align: justify;
     font-size: 16px;
-    font-weight: bold;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-    display: none; 
+    font-weight: 500;
+    text-align: justify;
+    background-color: #f8f8f8;
+    color: #333;
   }
   
-  .proyectos:hover .descripcion {
-    display: block; 
+  /* Responsive */
+  @media only screen and (max-width: 950px) {
+    .proyectos {
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+    }
+  
+    .proyectos .card {
+      width: 90%;
+    }
+  
+    .proyectos img {
+      height: 250px;
+    }
   }
+  
 
   .contacto {
    
@@ -209,6 +224,8 @@ code {
       margin-left: 0rem; 
     }
   }
+
+ 
 
 
   
