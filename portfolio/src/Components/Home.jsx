@@ -12,11 +12,11 @@ import { tecnologias } from "../Utils/tecnologias";
 import { usePagination } from "../hooks/usePagination";
 import ECOMMERCE from "../img/buenProvechoNuevo.png";
 import Palitos from "../img/palos.png";
-import Paises from "../img/PAISES.png";
+import Paises from "../img/PAISESNUEVO.png";
 import mangiare from "../img/mangiare.png";
-import ELEGANZA from "../img/ELEGANZA.jpg";
 import { biografia } from "../Utils/biografia";
-import VENICE from "../img/VENICETOTAL.jpg";
+import VENICE from "../img/veniceind.png";
+import seguros from "../img/seguros.png";
 
 export default function Home() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -100,7 +100,6 @@ export default function Home() {
           <Text
             fontSize="9rem"
             position="fixed"
-            // marginTop="1rem"
             marginLeft="5rem"
             opacity="0.1"
           >
@@ -202,23 +201,21 @@ export default function Home() {
         />
       </Box>
       <br />
-      <Box className="proyectos" id="proyectos">
-        <Text
-          fontSize="30px"
-          fontWeight="bold"
-          marginLeft="1rem"
-          color="#2B6388"
-        >
+      <Box display="flex" justifyContent="center">
+        <Text fontSize="30px" fontWeight="bold" color="#2B6388">
           Proyectos
         </Text>
+      </Box>
+      <Box className="proyectos" id="proyectos">
         <Flex
           display="flex"
           justifyContent="center"
           gap="1rem"
-          flexDirection={{ base: "column", md: "row" }}
+          flexDirection={{ base: "column", md: "column" }}
           marginTop="-1rem"
         >
           <Box
+            className="card"
             position="relative"
             overflow="hidden"
             borderRadius="8px"
@@ -263,13 +260,14 @@ export default function Home() {
           </Box>
 
           <Box
+            className="card"
             position="relative"
             overflow="hidden"
             borderRadius="8px"
             boxShadow="0 4px 8px rgba(0, 0, 0, 0.1)"
             padding="1rem"
           >
-            <img src={Paises} alt="paises" />
+            <img src={Paises} alt="paises" className="imgProyectos" />
             <Text className="descripcion">
               Proyecto Individual de Henry donde debía implementar una barra
               buscadora de países; mediante información traída desde una api
@@ -301,21 +299,22 @@ export default function Home() {
             </Box>
           </Box>
         </Flex>
-
         <Flex
           display="flex"
           justifyContent="center"
           gap="1rem"
-          flexDirection={{ base: "column", md: "row" }}
+          flexDirection={{ base: "column", md: "column" }}
+          marginTop="-1rem"
         >
           <Box
+            className="card"
             position="relative"
             overflow="hidden"
             borderRadius="8px"
             boxShadow="0 4px 8px rgba(0, 0, 0, 0.1)"
             padding="1rem"
           >
-            <img src={Palitos} alt="palitos" />
+            <img src={Palitos} alt="palitos" className="imgProyectos" />
             <Text className="descripcion">
               Con uno de mis mejores amigos y compañero de banco, en la
               secundaria jugábamos al juego de los palitos; A modo de recuerdo y
@@ -336,13 +335,14 @@ export default function Home() {
           </Box>
 
           <Box
+            className="card"
             position="relative"
             overflow="hidden"
             borderRadius="8px"
             boxShadow="0 4px 8px rgba(0, 0, 0, 0.1)"
             padding="1rem"
           >
-            <img src={ECOMMERCE} alt="" />
+            <img src={ECOMMERCE} alt="" className="imgProyectos" />
             <Text className="descripcion">
               E-COMMERCE: Proyecto Personal que busca contemplar una plantilla
               genérica para distintas empresas o pymes a fin de satisfacer las
@@ -373,110 +373,98 @@ export default function Home() {
             </Box>
           </Box>
         </Flex>
-
-        <Box
-          position="relative"
-          overflow="hidden"
-          borderRadius="8px"
-          boxShadow="0 4px 8px rgba(0, 0, 0, 0.1)"
-          padding="1rem"
+        <Flex
+          display="flex"
+          justifyContent="center"
+          gap="1rem"
+          flexDirection={{ base: "column", md: "row" }}
         >
-          <img src={ELEGANZA} style={{ height: "50%" }} alt="eleganza" />
+          <Box
+            className="card"
+            position="relative"
+            overflow="hidden"
+            borderRadius="8px"
+            boxShadow="0 4px 8px rgba(0, 0, 0, 0.1)"
+            padding="1rem"
+          >
+            <img src={seguros} className="imgProyectos" alt="seguros" />
 
-          <Text className="descripcion">
-            ELEGANZA shirts, es una página estática en la cual prioricé estilos
-            elegantes y sobrios para darle a la marca una impronta
-            personalizada. Tiene funcionalidades de carrito de compras mediante
-            LOCALSTORAGE; absolutamente todo fue compuesto en el front end; Una
-            navbar moderna, priorizando en el navegador imágenes atractivas que
-            llamen la atención del usuario. Todos los estilos fueron compuestos
-            en CSS y la aplicación entera fue desarrollada en REACT.JS.
-          </Text>
-          <Box marginTop="1rem">
-            <Link
-              href="https://github.com/Matu36/ELEGANZA"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Icon
-                as={FaGithub}
-                size="lg"
-                style={{ margin: "0 10px", fontSize: "30px" }}
-              />
-            </Link>
-            <Link href="https://eleganzashirts.vercel.app/">
-              <Icon
-                as={FaGlobe}
-                size="lg"
-                style={{ margin: "0 10px", fontSize: "30px" }}
-              />
-            </Link>
+            <Text className="descripcion">
+              Esta página estática de seguros fue desarrollada con un enfoque
+              profesional y funcional. Incluye un formulario de contacto
+              protegido con reCAPTCHA para mayor seguridad, permitiendo a los
+              usuarios enviar consultas de forma confiable. La aplicación fue
+              construida utilizando React para el frontend, Node.js y Sequelize
+              con PostgreSQL para la gestión de datos en el backend. Todos los
+              estilos fueron diseñados cuidadosamente con CSS para mantener una
+              estética sobria y alineada con el rubro. Se utilizó NODEMAILER
+              para el envio de emails.
+            </Text>
+
+            <Box marginTop="1rem">
+              <Link
+                href="https://github.com/Matu36/seguros"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon
+                  as={FaGithub}
+                  size="lg"
+                  style={{ margin: "0 10px", fontSize: "30px" }}
+                />
+              </Link>
+              <Link href="https://segurospineda.com.ar">
+                <Icon
+                  as={FaGlobe}
+                  size="lg"
+                  style={{ margin: "0 10px", fontSize: "30px" }}
+                />
+              </Link>
+            </Box>
           </Box>
-        </Box>
-        <Box
-          position="relative"
-          overflow="hidden"
-          borderRadius="8px"
-          boxShadow="0 4px 8px rgba(0, 0, 0, 0.1)"
-          padding="1rem"
-        >
-          <img src={VENICE} style={{ height: "50%" }} alt="" />
-          <Text className="descripcion">
-            VENICE Indumentaria: Descubre la Moda Urbana con Estilo Propio
-            Bienvenido a VENICE Indumentaria, donde la moda urbana cobra vida
-            con un toque auténtico y contemporáneo. En la creación de esta
-            página, utilicé diversas herramientas para ofrecer una experiencia
-            única. Aquí te presento algunas de las características destacadas:
-            Estilos Atractivos en CSS: La página VENICE se destaca por su diseño
-            atractivo y moderno, logrado gracias a estilos cuidadosamente
-            diseñados en CSS. Cada elemento visual refleja la esencia vibrante
-            de la moda urbana. Imágenes Envolventes: Utilicé imágenes
-            cautivadoras para sumergir a los visitantes en la atmósfera de la
-            moda urbana. Cada foto cuenta una historia de estilo, creando una
-            experiencia visual única. Slider de Fotos Dinámico: Implementé un
-            slider de fotos dinámico para destacar las últimas tendencias y
-            productos destacados. La función de desplazamiento permite explorar
-            la diversidad de la colección de manera fluida. Carrito de Compras y
-            Local Storage: Facilité la experiencia de compra con un carrito
-            intuitivo. La integración de local storage garantiza que los
-            productos seleccionados se mantengan, incluso si el usuario cierra
-            la página, ofreciendo conveniencia y personalización. Diseño
-            Totalmente Responsivo: La página VENICE Indumentaria es accesible
-            desde cualquier dispositivo gracias a su diseño totalmente
-            responsivo. Desde computadoras de escritorio hasta dispositivos
-            móviles, la página se adapta sin perder su atractivo visual. Toque
-            Personalizado: Cada detalle, desde la disposición de los productos
-            hasta la elección de colores, fue cuidadosamente seleccionado para
-            ofrecer una experiencia de compra única y personalizada. Con VENICE
-            Indumentaria, la moda urbana se convierte en una experiencia
-            interactiva y estilizada. Este proyecto refleja mi dedicación a
-            crear páginas web impactantes que no solo presentan productos, sino
-            que cuentan historias a través del diseño y la funcionalidad.
-            ¡Explora, descubre y sumérgete en la moda urbana con VENICE
-            Indumentaria!
-          </Text>
-          <Box marginTop="1rem">
-            <Link
-              href="https://github.com/Matu36/VENICE"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Icon
-                as={FaGithub}
-                size="lg"
-                style={{ margin: "0 10px", fontSize: "30px" }}
-              />
-            </Link>
-            <Link href="https://venice-nine.vercel.app/">
-              <Icon
-                as={FaGlobe}
-                size="lg"
-                style={{ margin: "0 10px", fontSize: "30px" }}
-              />
-            </Link>
+
+          <Box
+            className="card"
+            position="relative"
+            overflow="hidden"
+            borderRadius="8px"
+            boxShadow="0 4px 8px rgba(0, 0, 0, 0.1)"
+            padding="1rem"
+          >
+            <img src={VENICE} className="imgProyectos" alt="" />
+            <Text className="descripcion">
+              VENICE Indumentaria es una tienda online de moda urbana, moderna y
+              atractiva. El sitio fue desarrollado con un diseño responsive,
+              pensado para todo tipo de dispositivos. Cuenta con estilos
+              visuales en CSS, imágenes envolventes, un slider dinámico, carrito
+              de compras con localStorage y una estética personalizada. Este
+              proyecto combina funcionalidad con diseño para ofrecer una
+              experiencia de compra única y estilizada.
+            </Text>
+            <Box marginTop="1rem">
+              <Link
+                href="https://github.com/Matu36/VENICEIND"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon
+                  as={FaGithub}
+                  size="lg"
+                  style={{ margin: "0 10px", fontSize: "30px" }}
+                />
+              </Link>
+              <Link href="https://veniceind.vercel.app/">
+                <Icon
+                  as={FaGlobe}
+                  size="lg"
+                  style={{ margin: "0 10px", fontSize: "30px" }}
+                />
+              </Link>
+            </Box>
           </Box>
-        </Box>
+        </Flex>
       </Box>
+
       <br />
       <Box id="contacto" className="contacto">
         <Text
