@@ -49,7 +49,12 @@ export default function Home() {
   const Biography = () => {
     return (
       <Box>
-        <Text whiteSpace="pre-wrap" color="#2B6388" fontWeight="600">
+        <Text
+          whiteSpace="pre-wrap"
+          color="#2B6388"
+          fontWeight="600"
+          padding="1rem"
+        >
           {biografia}
         </Text>
       </Box>
