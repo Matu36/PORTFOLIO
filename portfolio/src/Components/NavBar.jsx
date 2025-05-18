@@ -18,18 +18,29 @@ export default function NavBar({ onToggleSidebar }) {
   const allImages = [...images];
 
   return (
-    <Box backgroundColor="#2B6388" color="black" zIndex="999" overflow="hidden">
+    <Box
+      backgroundColor="#2B6388"
+      color="black"
+      zIndex="999"
+      overflow="hidden"
+      paddingTop="10px"
+      paddingBottom="10px"
+    >
       <Flex>
         <div
           className="dark"
-          style={{ marginTop: "90px", marginLeft: "-0.5rem" }}
+          style={{ marginTop: "80px", marginLeft: "-0.5rem", fontSize: "20px" }}
         >
           <DarkMode />
 
           <button onClick={onToggleSidebar}>
             <FaHamburger
               color="white"
-              style={{ marginLeft: "1.5rem", marginTop: "0.5rem" }}
+              style={{
+                marginLeft: "1.5rem",
+                marginTop: "0.5rem",
+                fontSize: "18px",
+              }}
             />
           </button>
         </div>

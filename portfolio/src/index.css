@@ -13,10 +13,11 @@ code {
 }
 
 
-
 .carousel-wrapper {
   overflow: hidden;
-  padding: 0 2rem; /* aire izquierdo y derecho */
+  margin-left: 1rem; 
+  margin-right: 2rem; 
+ 
 }
 
 .carousel-track {
@@ -52,7 +53,7 @@ code {
   }
 
   .carousel-image img {
-    height: 150px;
+    height: 170px;
   }
 }
 
