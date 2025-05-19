@@ -143,8 +143,8 @@ code {
 
   @media only screen and (max-width: 950px) {
     .tecnologias {
-      width: 100%; 
-      margin-left: 0rem; 
+      width: 90%; 
+      margin: auto; 
     }
   }
 
